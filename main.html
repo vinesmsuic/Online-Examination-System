@@ -19,6 +19,12 @@
 
     <!-- jQuery-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/70f9c4154a.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <!-- To keep it in the center of page-->
@@ -28,19 +34,20 @@
         <div class="row">
             <div class="col-md-4 login-form mx-auto">
                 <h3>Login</h3>
+                <h6>Don't have an account?<a href="page/registration.html" class=""> Sign Up</a></h6>
                 <form>
                     <div class="error-message" id="errorMessage"></div>
                     <div class="form-group">
-                        <input id="enterID" name="enterID" type="text" class="form-control" placeholder="Your User ID *" value="" required/>
+                        <input id="enterID" type="text" class="form-control" placeholder="Your User ID *" value="" required/>
                     </div>
                     <div class="form-group">
-                        <input id="password" name="password" type="password" class="form-control" placeholder="Your Password *" value="" required/>
+                        <input id="password" type="password" class="form-control" placeholder="Your Password *" value="" required/>
                     </div>
                     <div class="form-group">
                         <input class="btn btn-block btn-primary" value="Login" onclick="login();" readonly />
                     </div>
                     <div class="form-group">
-                        <a href="#" class="ForgetPwd">Forget Password?</a>
+                        <a href="#" class="ForgetPwd">Trouble logging in?</a>
                     </div>
                 </form>
             </div>

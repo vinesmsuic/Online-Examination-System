@@ -36,6 +36,11 @@
     color: #333;
 }
 
+.login-form h6 {
+    text-align: center;
+    color: #333;
+}
+
 .login-form .ForgetPwd {
     color: #0062cc;
     font-weight: 600;
