@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body class="jumbotron vertical-center">
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-5 login-form mx-auto">
+                <h3>Create an account</h3>
+                <form class="form" action="form.php" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <div class="form-group btn-group btn-group-md" role="group">
+                        <button type="button" class="btn btn-outline-secondary">Student Account</button>
+                        <button type="button" class="btn btn-outline-secondary">Teacher Account</button>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="User ID *" name="userid" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nickname *" name="nickname" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email *" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password *" name="password" autocomplete="new-password" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password *" name="confirmpassword" autocomplete="new-password" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Select your avatar: </label>
+                        <input type="file" name="avatar" accept="image/*" class="btn btn-block btn-secondary" required />
+                    </div>
+                    <div>
+                        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

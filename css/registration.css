@@ -1,0 +1,31 @@
+.jumbotron {
+    background-image: url(https://i.imgur.com/tgM8E0J.gif);
+}
+
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 50%;
+}
+
+.login-container form {
+    padding: 10%;
+}
+
+.login-form {
+    padding: 5%;
+    background-image: url(https://imgur.com/j15zekU.gif);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form h3 {
+    text-align: center;
+    color: #333;
+}
