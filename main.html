@@ -2,14 +2,26 @@
 <html lang="en">
 
 <head>
+    <!-- Make the page responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Online Examination System</title>
+
+    <!-- Our own css-->
     <link rel="stylesheet" href="css/login.css">
+
+    <!-- Our own js-->
+    <script src="js/checklogin.js"></script>
+
+    <!-- Bootstrap-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <!-- jQuery-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
+<!-- To keep it in the center of page-->
 
 <body class="jumbotron vertical-center">
     <div class="container login-container">
@@ -17,14 +29,15 @@
             <div class="col-md-4 login-form mx-auto">
                 <h3>Login</h3>
                 <form>
+                    <div class="error-message" id="errorMessage"></div>
                     <div class="form-group">
-                        <input name="enterID" type="text" class="form-control" placeholder="Your User ID *" value="" required/>
+                        <input id="enterID" name="enterID" type="text" class="form-control" placeholder="Your User ID *" value="" required/>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" placeholder="Your Password *" value="" required/>
+                        <input id="password" name="password" type="password" class="form-control" placeholder="Your Password *" value="" required/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-block btn-primary" value="Login" />
+                        <input class="btn btn-block btn-primary" value="Login" onclick="login();" readonly />
                     </div>
                     <div class="form-group">
                         <a href="#" class="ForgetPwd">Forget Password?</a>
