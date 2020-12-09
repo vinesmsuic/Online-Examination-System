@@ -9,7 +9,7 @@ function login() {
         Request.onload = function() {
             var respond = Request.responseText;
             if (respond == "success") {
-                window.location.href = "page/dashboard.html";
+                window.location.href = "page/student-dashboard.php";
             } else {
                 document.getElementById("errorMessage").innerText = respond;
             }

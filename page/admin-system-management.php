@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <?php include '../functionalphp/main-head.php';?>
+	  <?php include '../functionalphp/main-head.php';?>
+	  <script src="../js/admin-manage.js"></script>
    </head>
-   <body>
+   <body onload="showAccounts()">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">
@@ -11,17 +12,10 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
+               <p>Welcome, Admin!</p>
                <li class="active">
                   <a href="#">System Management</a>
                </li>
-			</ul>
-			<ul class="list-unstyled CTAs">
-                <li>
-                    <a href="" class="download">Download source</a>
-                </li>
-                <li>
-                    <a href="" class="article">Back to article</a>
-                </li>
             </ul>
          </nav>
          <!-- Page Content  -->
@@ -35,104 +29,48 @@
                   <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="fas fa-align-justify"></i>
                   </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                           <div class="nav-link active">Welcome! Admin</div>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                     </ul>
+                  </div>
                </div>
-            </nav>
+			</nav>
+			<div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-6 mx-auto">	  
+               <h3>Manage Accounts</h3>
+					<form id="account-form" method="post">
+                  <div class="form-group">
+                     <input type="button" value="Add a new teacher or student account" name="register" class="btn btn-block btn-primary" onclick="btnAdd();" />
+                  </div>
+						<div class="form-group">
+						Select a student or teacher account to modify or delete: 
+						<select class="form-control" id="account" name="account" onfocus="showAccounts()"></select>
+						</div>
+						<div class="form-group">
+                        <input class="btn btn-block btn-info" name="manage" type="submit" onclick="btnModify();" value="Modify selected account"/>
+                        <input class="btn btn-block btn-danger" name="manage" type="submit" onclick="btnDelete();" value="Delete selected account"/>
+                    	</div>
+					</form>
+                  </div>
+               </div>
+			</div>
+			<hr>
             <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							#
-						</th>
-						<th>
-							Product
-						</th>
-						<th>
-							Payment Taken
-						</th>
-						<th>
-							Status
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Default
-						</td>
-					</tr>
-					<tr class="table-active">
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Approved
-						</td>
-					</tr>
-					<tr class="table-success">
-						<td>
-							2
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							02/04/2012
-						</td>
-						<td>
-							Declined
-						</td>
-					</tr>
-					<tr class="table-warning">
-						<td>
-							3
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							03/04/2012
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-					<tr class="table-danger">
-						<td>
-							4
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							04/04/2012
-						</td>
-						<td>
-							Call in to confirm
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
+               <div class="row">
+                  <div class="col-md-12 mx-auto">
+                     <div id="all-info">
+                     <?php include '../functionalphp/admin-view-info.php';?>
+                     </div>
+                  </div>
+               </div>
+			   </div>
          </div>
       </div>
    </body>

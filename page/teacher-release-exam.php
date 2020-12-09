@@ -73,7 +73,7 @@
                            <a class="nav-link" href="#">Page</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#">Page</a>
+                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                      </ul>
                   </div>
