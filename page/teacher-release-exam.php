@@ -2,8 +2,9 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
+      <script src="../js/teacher-add-questions.js"></script>
    </head>
-   <body>
+   <body onload="btnAddQuestion();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">
@@ -11,42 +12,15 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-               <li class="">
-                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                  <ul class="collapse list-unstyled" id="homeSubmenu">
-                     <li>
-                        <a href="#">Home 1</a>
-                     </li>
-                     <li>
-                        <a href="#">Home 2</a>
-                     </li>
-                     <li>
-                        <a href="#">Home 3</a>
-                     </li>
-                  </ul>
-               </li>
+               <p>Welcome! User</p>
                <li>
-                  <a href="#">About</a>
-               </li>
-               <li>
-                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                  <ul class="collapse list-unstyled" id="pageSubmenu">
-                     <li>
-                        <a href="#">Page 1</a>
-                     </li>
-                     <li>
-                        <a href="#">Page 2</a>
-                     </li>
-                     <li>
-                        <a href="#">Page 3</a>
-                     </li>
-                  </ul>
+                  <a href="#">Dashboard</a>
                </li>
                <li class="active">
                   <a href="#">Releases an Exam</a>
                </li>
                <li>
-                  <a href="#">Contact</a>
+                  <a href="teacher-view-exam.php">View Student's Exam</a>
                </li>
             </ul>
          </nav>
@@ -63,15 +37,6 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item active">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
                         <li class="nav-item">
                            <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
@@ -79,32 +44,56 @@
                   </div>
                </div>
             </nav>
+
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-7">
-                     <h3>
+                     <h3>Exam Questions</h3>
+
+                     <!--Painful Hell-->
+                     <div class='dynamic-question-field'>
+                        <!--Generate Questions Here When User click "Add Questions"-->
+                     </div>
+
+                  </div>
+                  <div class="col-md-5">
+                     <h3 class="container-fluid pl-3">
                         Exam Details
                      </h3>
-                     <form role="form">
-                        <div class="form-group">
-                           <label for="course-name">Course Name:</label><input type="text" class="form-control" id="coursename" />
-                        </div>
-                        <div class="form-group">
-                           <label for="exampleInputPassword1">
-                           Start Time
-                           </label>
-                           <input type="time" id="appt" name="appt">
-                        </div>
-                        <div class="form-group">
-                           <label for="exampleInputPassword1">
-                           End Time
-                           </label>
-                           <input type="time" id="appt" name="appt">
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        Create Exam
-                        </button>
-                     </form>
+                     <div class="container-fluid p-3">
+                        <form role="form">
+                           <div class="form-group">
+                              <label for="course-name">Course Code:</label><input type="text" class="form-control" id="coursename" />
+                           </div>
+                           <div class="form-group">
+                              <label for="exam-date">
+                              Exam Date: 
+                              </label>
+                              <input type="date" id="exam-date" name="exam-date">
+                           </div>
+                           <div class="form-row form-group">
+                              <div class="col">
+                                 <label for="start-time">Start Time: </label>
+                                 <input type="time" id="start-time" name="start-time">
+                              </div>
+                              <div class="col">
+                                 <label for="end-time">End Time: </label>
+                                 <input type="time" id="end-time" name="end-time">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label for="exam-remarks">Remarks:</label><input type="text" class="form-control" id="exam-remarks" />
+                           </div>
+                           <div class="form-row form-group">
+                              <div class="col">
+                                 <button type="button" class="btn btn-primary" onclick="btnAddQuestion();">Add Question</button>
+                              </div>
+                              <div class="col">
+                                 <button type="button" class="btn btn-primary" onclick="btnConfirmReleaseExam();">Confirm and Create Exam</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
                   </div>
                </div>
             </div>

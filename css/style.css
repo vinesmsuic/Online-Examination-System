@@ -1,3 +1,8 @@
 body {
     background-image: url(https://i.imgur.com/tgM8E0J.gif);
 }
+
+.profileimage {
+    width: auto;
+    max-height: 35px;
+}

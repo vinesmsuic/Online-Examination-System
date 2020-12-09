@@ -58,41 +58,41 @@ function Register() {
     if ((userID != "") && (password != "") && (email != "")) {
         var Request = new XMLHttpRequest();
         var info = "?enterID=" + userID;
-        Request.open("GET", "../functionalphp/check-registration.php" + info, true);
+        Request.open("GET", "../functionalphp/find-account.php" + info, true);
         Request.send();
         Request.onload = function() {
             var respond = Request.responseText;
-            if (respond != "Accepted") {
-                document.getElementById("errorMessage1").innerText = respond;
+            if (respond != "No such account") {
+                document.getElementById("errorMessage1").innerText = "An account with the entered login ID has already been created. Please change your login ID.";
                 valid = false;
             }
-        }
-        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!regex.test(email)) {
-            document.getElementById("errorMessage2").innerText = "Please input a valid email address.";
-            valid = false;
-        }
-        if (password != confirmPassword) {
-            document.getElementById("errorMessage3").innerText = "The password does not match with the confirm password.";
-            valid = false;
-        }
-        if (document.getElementById("option2").checked) {
-            courseNum = parseInt(document.getElementById("coursenum").value);
-            for (i = 1; i <= courseNum; i++) {
-                courseName = document.getElementById("course" + i).value;
-                console.log(courseName.includes(","));
-                if (courseName.includes(",")) {
-                    valid = false;
-                    document.getElementById("errorMessage4").innerText = "Course code cannot include character ','.";
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!regex.test(email)) {
+                document.getElementById("errorMessage2").innerText = "Please input a valid email address.";
+                valid = false;
+            }
+            if (password != confirmPassword) {
+                document.getElementById("errorMessage3").innerText = "The password does not match with the confirm password.";
+                valid = false;
+            }
+            if (document.getElementById("option2").checked) {
+                courseNum = parseInt(document.getElementById("coursenum").value);
+                for (i = 1; i <= courseNum; i++) {
+                    courseName = document.getElementById("course" + i).value;
+                    console.log(courseName.includes(","));
+                    if (courseName.includes(",")) {
+                        valid = false;
+                        document.getElementById("errorMessage4").innerText = "Course code cannot include character ','.";
+                    }
                 }
             }
-        }
-        if (document.getElementById("security").value == "-1") {
-            document.getElementById("errorMessage5").innerText = "Please select a question as your security question.";
-            valid = false;
-        }
-        if (valid) {
-            document.getElementById("submit").click();
+            if (document.getElementById("security").value == "-1") {
+                document.getElementById("errorMessage5").innerText = "Please select a question as your security question.";
+                valid = false;
+            }
+            if (valid) {
+                document.getElementById("submit").click();
+            }
         }
     } else {
         document.getElementById("submit").click();

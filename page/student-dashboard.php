@@ -11,51 +11,15 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-               <p>Dummy Heading</p>
+               <p>Welcome! User</p>
                <li class="active">
-                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                  <ul class="collapse list-unstyled" id="homeSubmenu">
-                     <li>
-                        <a href="#">Home 1</a>
-                     </li>
-                     <li>
-                        <a href="#">Home 2</a>
-                     </li>
-                     <li>
-                        <a href="#">Home 3</a>
-                     </li>
-                  </ul>
+                    <a href="#">Dashboard</a>
                </li>
                <li>
-                  <a href="#">About</a>
+                  <a href="student-take-exam.php">Take Exam</a>
                </li>
                <li>
-                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                  <ul class="collapse list-unstyled" id="pageSubmenu">
-                     <li>
-                        <a href="#">Page 1</a>
-                     </li>
-                     <li>
-                        <a href="#">Page 2</a>
-                     </li>
-                     <li>
-                        <a href="#">Page 3</a>
-                     </li>
-                  </ul>
-               </li>
-               <li>
-                  <a href="#">Portfolio</a>
-               </li>
-               <li>
-                  <a href="#">Contact</a>
-               </li>
-            </ul>
-            <ul class="list-unstyled CTAs">
-               <li>
-                  <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-               </li>
-               <li>
-                  <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                  <a href="student-view-result.php">View Result</a>
                </li>
             </ul>
          </nav>
@@ -72,15 +36,6 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item active">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Page</a>
-                        </li>
                         <li class="nav-item">
                            <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
@@ -92,11 +47,9 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="jumbotron">
-                        <h2>
-                           Hello, world!
-                        </h2>
+                        <h2>Welcome!</h2>
                         <p>
-                           This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                            This is an online examination system where teachers can release an exam and evaluate the student's results, and students and take an exam.   
                         </p>
                         <p>
                            <a class="btn btn-primary btn-large" href="#">Learn more</a>
@@ -109,7 +62,7 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="row">
-                        <div class="col-md-6 bg-dark">
+                        <div class="col-md-6 pt-3 bg-white border">
                            <div class="alert alert-dismissable alert-info">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                               ×
@@ -117,100 +70,72 @@
                               <h4>
                                  Alert!
                               </h4>
-                              <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
+                              <strong>You have these exams this semester.</strong> Please note and good luck!
                            </div>
-                           <table class="table">
+                           <table class="table table-striped">
                               <thead>
                                  <tr>
                                     <th>
-                                       #
+                                       Course Code
                                     </th>
                                     <th>
-                                       Product
+                                       Exam Time
                                     </th>
                                     <th>
-                                       Payment Taken
+                                        Date
                                     </th>
                                     <th>
-                                       Status
+                                       Remarks
                                     </th>
                                  </tr>
                               </thead>
                               <tbody>
                                  <tr>
                                     <td>
-                                       1
+                                       EIE4432
                                     </td>
                                     <td>
-                                       TB - Monthly
+                                       10:00 - 11:00
                                     </td>
                                     <td>
-                                       01/04/2012
+                                       01/12/2020
                                     </td>
                                     <td>
-                                       Default
-                                    </td>
-                                 </tr>
-                                 <tr class="table-active">
-                                    <td>
-                                       1
-                                    </td>
-                                    <td>
-                                       TB - Monthly
-                                    </td>
-                                    <td>
-                                       01/04/2012
-                                    </td>
-                                    <td>
-                                       Approved
+                                       -
                                     </td>
                                  </tr>
-                                 <tr class="table-success">
+                                 <tr>
                                     <td>
-                                       2
+                                        EIE3333
                                     </td>
                                     <td>
-                                       TB - Monthly
+                                        12:00 - 14:00
                                     </td>
                                     <td>
-                                       02/04/2012
+                                        02/12/2020
                                     </td>
                                     <td>
-                                       Declined
-                                    </td>
-                                 </tr>
-                                 <tr class="table-warning">
-                                    <td>
-                                       3
-                                    </td>
-                                    <td>
-                                       TB - Monthly
-                                    </td>
-                                    <td>
-                                       03/04/2012
-                                    </td>
-                                    <td>
-                                       Pending
+                                        Open Book
                                     </td>
                                  </tr>
-                                 <tr class="table-danger">
+                                 <tr>
                                     <td>
-                                       4
+                                        EIE4435
                                     </td>
                                     <td>
-                                       TB - Monthly
+                                        12:00 - 14:00
                                     </td>
                                     <td>
-                                       04/04/2012
+                                        12/12/2020
                                     </td>
                                     <td>
-                                       Call in to confirm
+                                       -
                                     </td>
                                  </tr>
                               </tbody>
                            </table>
                         </div>
-                        <div class="col-md-6 bg-dark">
+                        <div class="col-md-6 pt-3 bg-white border">
                            <blockquote class="blockquote">
                               <p class="mb-0">
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.

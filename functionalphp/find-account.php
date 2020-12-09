@@ -2,7 +2,7 @@
 		include "mysql-connect.php";
 		
         $ID = $_GET['enterID'];
-        $stmt = $connect->prepare("SELECT ID FROM users WHERE ID = ?");
+        $stmt = $connect->prepare("SELECT * FROM users WHERE ID = ?");
         $stmt->bind_param("s",$ID);
         $valid = $stmt->execute();
 	    if (!$valid){
@@ -11,9 +11,10 @@
         $result = $stmt->get_result();
 	    if ($result->num_rows==0){
             //display message of no such student/teacher/admin
-	    	echo "Accepted";
+	    	echo "No such account";
 	    } else {
-            echo "An account with the entered login ID has already been created. Please change your login ID.";
+            $row = $result->fetch_assoc();
+            print(json_encode($row));
         }
         $connect->close();
 ?>

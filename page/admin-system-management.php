@@ -66,7 +66,10 @@
                <div class="row">
                   <div class="col-md-12 mx-auto">
                      <div id="all-info">
-                     <?php include '../functionalphp/admin-view-info.php';?>
+                        <form action="../page/admin-modify-account.php " method="post" id="modify">
+                           <?php include '../functionalphp/admin-view-info.php';?>
+                           <input type="hidden" id="targetID" name="targetID" value="" />
+                        </form>
                      </div>
                   </div>
                </div>

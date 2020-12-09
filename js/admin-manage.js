@@ -8,20 +8,20 @@ function showAccounts() {
     }
 }
 
-function btnDelete() {
+function btnDelete(selectedID) {
     var myRequest = new XMLHttpRequest();
-    var selectedID = document.getElementById("account").value;
     var info = "?enterID=" + selectedID;
     myRequest.open("GET", "../functionalphp/admin-delete-account.php" + info, true);
     myRequest.send();
     myRequest.onload = function() {
         var respond = this.responseText;
+        location.reload();
     }
 }
 
-function btnModify() {
-    var selectedID = document.getElementById("account").value;
-    location.href = "admin-modify-account.php";
+function btnModify(selectedID) {
+    document.getElementById("targetID").value = selectedID;
+    document.getElementById("modify").submit();
 }
 
 function btnAdd() {

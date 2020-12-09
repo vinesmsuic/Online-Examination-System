@@ -13,13 +13,13 @@
             <ul class="list-unstyled components">
                <p>Welcome! User</p>
                <li>
-                  <a href="#">Dashboard</a>
-               </li>
-               <li >
-                  <a href="teacher-release-exam.php">Releases an Exam</a>
+                    <a href="student-dashboard.php">Dashboard</a>
                </li>
                <li class="active">
-                  <a href="#">View Student's Exam</a>
+                    <a href="#">Take Exam</a>
+               </li>
+               <li>
+                    <a href="student-view-result.php">View Result</a>
                </li>
             </ul>
          </nav>
@@ -43,7 +43,8 @@
                   </div>
                </div>
             </nav>
-         
+
+
          </div>
       </div>
    </body>
