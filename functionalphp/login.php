@@ -3,13 +3,13 @@
 		
         $ID = $_GET['enterID'];
         $PW = $_GET['password'];
-        $connect->prepare("SELECT PW, userType FROM users WHERE ID = ?");
-        $connect->bind_param("s",$ID);
-        $valid = $connect->execute();
+        $stmt = $connect->prepare("SELECT PW, userType FROM users WHERE ID = ?");
+        $stmt->bind_param("s",$ID);
+        $valid = $stmt->execute();
 	    if (!$valid){
 	    	die("Could not successfully run query.". $connect->connect_error);
         }
-        $result = $connect->get_result();
+        $result = $stmt->get_result();
 	    if ($result->num_rows==0){
             //display message of no such student/teacher/admin
 	    	echo "Failed to find an account with the input ID.";

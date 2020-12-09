@@ -1,6 +1,6 @@
 <?php
     if (isset($_COOKIE["type"])){
-        echo $_CCOKIE["type"];
+        echo $_COOKIE["type"];
     } else {
         echo "not logged."
     }

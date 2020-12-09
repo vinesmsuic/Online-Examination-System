@@ -36,10 +36,10 @@
                     }else{
                         $statusMsg = "File upload failed, please try again.";
                     } */
-                    $connect->prepare("INSERT into users (ID, userType, PW, nickName, email, profileImage, course, gender, birthday) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    $connect->bind_param("sssssssss",$ID,$userType,$password,$nickName,$email,$fileName,$course,$gender,$birthday);
-                    $insert = $connect->execute();
-                    if($insert){
+                    $stmt = $connect->prepare("INSERT into users (ID, userType, PW, nickName, email, profileImage, course, gender, birthday) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    $stmt->bind_param("sssssssss",$ID,$userType,$password,$nickName,$email,$fileName,$course,$gender,$birthday);
+                    $valid = $stmt->execute();
+                    if($valid){
                         $statusMsg = "success";
                     }else{
                         $statusMsg = "File upload failed, please try again.";
