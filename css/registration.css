@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.error-message {
+    color: red;
+}
+
 .container {
     max-width: 50%;
 }

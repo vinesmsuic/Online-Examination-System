@@ -3,20 +3,23 @@
 		
         $ID = $_GET['enterID'];
         $PW = $_GET['password'];
-        $Query = "SELECT PW, userType FROM users WHERE ID = '$ID'";
-	    $Result = mysqli_query($connect, $Query);
-	    if (!$Result){
-	    	die("Could not successfully run query.". mysqli_error($connect));
+        $connect->prepare("SELECT PW, userType FROM users WHERE ID = ?");
+        $connect->bind_param("s",$ID);
+        $valid = $connect->execute();
+	    if (!$valid){
+	    	die("Could not successfully run query.". $connect->connect_error);
         }
-	    if (mysqli_num_rows($Result)==0){
+        $result = $connect->get_result();
+	    if ($result->num_rows==0){
             //display message of no such student/teacher/admin
 	    	echo "Failed to find an account with the input ID.";
 	    } else {
-            $row = mysqli_fetch_assoc($Result);
+            $row = $result->fetch_assoc();
             if ($PW == $row['PW']) {
                 $type = $row['userType'];
                 //save data, record cookie for 24hours
-                setcookie($ID, $type, time() + 1);
+                setcookie("type", $type, time() + 60);
+                setcookie("userID", $ID, time() + 60);//save data, record cookie for 24hours
                 //login success
                 echo "success";
             } else {
@@ -24,5 +27,5 @@
                 echo "The input password does not match the account password.";
             }
         }
-        mysqli_close($connect);
+        $connect->close();
 ?>
