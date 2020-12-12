@@ -47,4 +47,5 @@
          </div>
       </div>
    </body>
+   <?php include '../functionalphp/main-foot.php';?>
 </html>

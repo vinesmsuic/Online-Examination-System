@@ -2,34 +2,9 @@
 <html lang="en">
 
 <head>
-    <!-- Make the page responsive-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+    <?php include '../functionalphp/registration-head.php';?>
     <title>Online Examination System - Registration</title>
-
-    <!-- Our own css-->
-    <link rel="stylesheet" href="../css/registration.css">
-
-    <!-- Our own js-->
     <script src="../js/registration.js"></script>
-
-    <!-- Bootstrap-->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-    <!-- jQuery-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- FontAwesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/70f9c4154a.js" crossorigin="anonymous"></script>
-
-    <!-- Datepicker -->
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
-
-
 </head>
 
 <!-- To keep it in the center of page-->
@@ -39,8 +14,8 @@
         <div class="row">
             <div class="col-md-5 login-form mx-auto">
                 <h3>Create an account</h3>
-                <h6>I have an account already.<a href="../main.html" class=" "> Login</a></h6>
-                <form class="form" action="../functionalphp/registration.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
+                <h6>I have an account already.<a href="../login.html" class=" "> Login</a></h6>
+                <form class="form" action="../functionalphp/add-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
                     <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary" id="studentac">
                             <input type="radio" name="usertype" id="option1" value="student" autocomplete="off" onclick="StudentForm();" checked/>
@@ -112,17 +87,12 @@
                     <div>
                         <input type="button" value="Register" name="register" class="btn btn-block btn-primary" onclick="Register();" />
                     </div>
+                    <input type="hidden" name="source" value="register" hidden />
                     <input type="Submit" id="submit" hidden />
                 </form>
             </div>
         </div>
     </div>
 </body>
-
-<script>
-    $('#datepicker').datepicker({
-        uiLibrary: 'bootstrap4'
-    });
-</script>
 
 </html>

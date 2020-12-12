@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-	  <?php include '../functionalphp/main-head.php';?>
+        <?php include '../functionalphp/main-head.php';?>
+      <?php //include '../functionalphp/registration-head.php';?>
 	  <script src="../js/registration.js"></script>
    </head>
    <body onload="StudentForm();">
@@ -22,9 +23,9 @@
          <div id="content">
             <div class="container login-container">
                 <div class="row">
-                    <div class="col-md-5 login-form mx-auto">
+                    <div class="mx-auto">
                         <h3>Create an account</h3>
-                        <form class="form" action="../functionalphp/registration.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
+                        <form class="form" action="../functionalphp/add-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
                             <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-secondary" id="studentac">
                                     <input type="radio" name="usertype" id="option1" value="student" autocomplete="off" onclick="StudentForm();" checked/>
@@ -75,8 +76,8 @@
                                         <div id="course2space"></div>
                                     </div>
                                     <input type="hidden" name="CourseNum" id="coursenum" value="1" />
-                                    <input type="button" value="Add New..." id="morecourse" class="btn btn-block btn-primary" onclick="MoreCourse();" />
-                                    <input type="button" value="Reset" id="resetcourse" class="btn btn-block btn-primary" onclick="ResetCourse();" />
+                                    <input type="button" value="Add New..." id="morecourse" class="btn btn-primary" onclick="MoreCourse();" />
+                                    <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -96,6 +97,7 @@
                             <div>
                                 <input type="button" value="Register" name="register" class="btn btn-block btn-primary" onclick="Register();" />
                             </div>
+                            <input type="hidden" name="source" value="admin" hidden />
                             <input type="Submit" id="submit" hidden />
                         </form>
                     </div>

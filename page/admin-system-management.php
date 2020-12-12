@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-	  <?php include '../functionalphp/main-head.php';?>
+     <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/admin-manage.js"></script>
    </head>
    <body onload="showAccounts()">
@@ -40,7 +40,8 @@
                      </ul>
                   </div>
                </div>
-			</nav>
+         </nav>
+         <!--
 			<div class="container-fluid">
                <div class="row">
                   <div class="col-md-6 mx-auto">	  
@@ -61,11 +62,15 @@
                   </div>
                </div>
 			</div>
-			<hr>
+         <hr>
+         -->
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12 mx-auto">
                      <div id="all-info">
+                        <div class="form-group">
+                           <input type="button" value="Add a new teacher or student account" name="register" class="btn btn-block btn-primary btn-lg" onclick="btnAdd();" />
+                        </div>
                         <form action="../page/admin-modify-account.php " method="post" id="modify">
                            <?php include '../functionalphp/admin-view-info.php';?>
                            <input type="hidden" id="targetID" name="targetID" value="" />
@@ -77,4 +82,5 @@
          </div>
       </div>
    </body>
+   <?php include '../functionalphp/main-foot.php';?>
 </html>

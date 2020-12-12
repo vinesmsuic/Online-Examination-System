@@ -46,7 +46,23 @@
                     $stmt->bind_param("sssssssssis",$ID,$userType,$password,$nickName,$email,$fileName,$course,$gender,$birthday,$securityType,$securityAnswer);
                     $valid = $stmt->execute();
                     if($valid){
-                        $statusMsg = "success";
+                    
+                        $accFrom = $_POST['source'];
+
+                        //Alert User that an account has been created
+                        $alert_message = "Registration Successful! You will be redirected in a few seconds.";
+
+                        if($accFrom == "admin")
+                        {
+                            $link = "../page/admin-system-management.php";
+                        }
+                        else
+                        {
+                            $link = "../login.html";
+                        }
+                        
+                        echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
+                        
                     }else{
                         $statusMsg = "File upload failed, please change the file name or try again.";
                     }
@@ -60,6 +76,7 @@
             $statusMsg = 'Please select a file to upload.';
         }
         // Display status message
+        
         echo $statusMsg;
 
         $connect->close();

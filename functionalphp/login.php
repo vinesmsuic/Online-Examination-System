@@ -21,7 +21,8 @@
                 setcookie("type", $type, time() + 60);
                 setcookie("userID", $ID, time() + 60);//save data, record cookie for 24hours
                 //login success
-                echo "success";
+                echo $type;
+
             } else {
                 //display message of password error
                 echo "The input password does not match the account password.";

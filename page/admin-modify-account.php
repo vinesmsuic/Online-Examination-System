@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-	  <?php include '../functionalphp/main-head.php';?>
+      <?php include '../functionalphp/registration-head.php';?>
+      <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/admin-modify.js"></script>
    </head>
    <body onload="InfoSet('<?php echo $_POST['targetID'];?>');">
@@ -22,7 +23,7 @@
          <div id="content">
             <div class="container login-container">
                 <div class="row">
-                    <div class="col-md-5 login-form mx-auto">
+                    <div class="mx-auto">
                         <h3>Modify account</h3>
                         <h6 id="message"></h6>
                         <form class="form" action="../functionalphp/admin-modify-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
@@ -95,4 +96,5 @@
          </div>
       </div>
    </body>
+   <?php include '../functionalphp/main-foot.php';?>
 </html>

@@ -8,9 +8,13 @@ function login() {
         Request.send();
         Request.onload = function() {
             var respond = Request.responseText;
-            if (respond == "success") {
+            if (respond == "admin") {
+                window.location.href = "page/admin-system-management.php";
+            } else if (respond == "student"){
                 window.location.href = "page/student-dashboard.php";
-            } else {
+            } else if (respond == "teacher"){
+                window.location.href = "page/teacher-release-exam.php";
+            } else{
                 document.getElementById("errorMessage").innerText = respond;
             }
         }
@@ -26,7 +30,13 @@ function redirect() {
     Request.onload = function() {
         var respond = Request.responseText;
         if (respond != "not logged.") {
-            window.location.href = "functionalphp/redirect.php";
+            if (respond == "admin") {
+                window.location.href = "page/admin-system-management.php";
+            } else if (respond == "student"){
+                window.location.href = "page/student-dashboard.php";
+            } else if (respond == "teacher"){
+                window.location.href = "page/teacher-release-exam.php";
+            }
         }
     }
 }
