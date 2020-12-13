@@ -2,6 +2,7 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
+      <script src="../js/teacher-view-exam.js"></script>
    </head>
    <body>
       <div class="wrapper">
@@ -17,6 +18,9 @@
                </li>
                <li >
                   <a href="teacher-release-exam.php">Releases an Exam</a>
+               </li>
+               <li >
+                  <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
                </li>
                <li class="active">
                   <a href="#">View Student's Exam</a>
@@ -43,9 +47,18 @@
                   </div>
                </div>
             </nav>
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     
+                     
+                  </div>
+               </div>
+            </div>
          
          </div>
       </div>
    </body>
    <?php include '../functionalphp/main-foot.php';?>
+   <?php include '../functionalphp/back-to-top-btn.php';?>
 </html>

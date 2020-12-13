@@ -1,9 +1,12 @@
 <?php
     if (isset($_COOKIE["type"])){
-        setcookie("type", $_COOKIE["type"], time() - 3600);
+        setcookie("type", $_COOKIE["type"], time() - 3600, "/");
     }
     if (isset($_COOKIE["userID"])){
-        setcookie("userID", $_COOKIE["userID"], time() - 3600);
+        setcookie("userID", $_COOKIE["userID"], time() - 3600, "/");
+    }
+    if (isset($_COOKIE["nickName"])){
+        setcookie("nickName", $_COOKIE["nickName"], time() - 3600, "/");
     }
     $alert_message = "You have logged out!";
     $link = "../login.html";

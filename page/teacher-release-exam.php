@@ -20,6 +20,9 @@
                <li class="active">
                   <a href="#">Releases an Exam</a>
                </li>
+               <li >
+                  <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
+               </li>
                <li>
                   <a href="teacher-view-exam.php">View Student's Exam</a>
                </li>
@@ -65,7 +68,6 @@
                         Exam Details
                      </h3>
                      <div class="container-fluid p-3">
-                        <form role="form">
                            <div class="form-group">
                               <div class="error-message" id="errorMessage1" style="color:red;"></div>
                               <label for="course-name">Course Code:</label><select type="text" class="form-control" id="course-name" name="course-name" ></select>
@@ -97,7 +99,6 @@
                               <div class="col">
                                  <button type="button" class="btn btn-primary" onclick="btnConfirmReleaseExam();">Confirm and Create Exam</button>
                               </div>
-                           </form>
                            </div>
                         </form>
                      </div>
@@ -105,10 +106,11 @@
                </div>
             </div>
 
-            <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+            
 
          </div>
       </div>
    </body>
    <?php include '../functionalphp/main-foot.php';?>
+   <?php include '../functionalphp/back-to-top-btn.php';?>
 </html>

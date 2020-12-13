@@ -22,7 +22,7 @@
          <div id="content">
             <div class="container login-container">
                 <div class="row">
-                    <div class="mx-auto">
+                    <div class="col-md-10 mx-auto">
                         <h3>Create an account</h3>
                         <form class="form" action="../functionalphp/add-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
                             <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
@@ -59,11 +59,15 @@
                             <div id="studentform">
                                 <div class="form-group">
                                     <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Your Birthday * " required/></div>
-                                <div class="form-group" style="text-align: center; width: auto;">
+                                <div class="form-row form-group" style="text-align: center; width: auto;">
+                                    <div class="col">
                                     <input type="radio" id="male" name="gender" value="M" checked="checked">
-                                    <label for="male">Male&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <label for="male">Male</label>
+                                    </div>
+                                    <div class="col">
                                     <input type="radio" id="female" name="gender" value="F">
                                     <label for="female">Female</label>
+                                    </div>
                                 </div>
                             </div>
                             <div id="teacherform">
@@ -79,13 +83,13 @@
                                     <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                                 </div>
                             </div>
+                            <div class="error-message" id="errorMessage5"></div>
                             <div class="form-row form-group">
                               <div class="col">
-                                <div class="error-message" id="errorMessage5"></div>
                                 <label>Select a security question: </label>
                               </div>
                               <div class="col">
-                                <select name="securityType" id="security">
+                                <select class="form-control" name="securityType" id="security">
                                     <option value="-1" selected disabled hidden></option>
                                     <option value="1">Where do you live?</option>
                                     <option value="2">What game do you like?</option>

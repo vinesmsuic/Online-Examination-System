@@ -23,7 +23,7 @@
          <div id="content">
             <div class="container login-container">
                 <div class="row">
-                    <div class="mx-auto">
+                    <div class="col-md-10 mx-auto">
                         <h3>Modify account</h3>
                         <h6 id="message"></h6>
                         <form class="form" action="../functionalphp/admin-modify-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
@@ -42,7 +42,7 @@
                                 <input type="email" class="form-control" placeholder="Email * " name="email" id="email" required />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control " placeholder="Password * " name="password" autocomplete="new-password" id="password" required />
+                                <input type="password" class="form-control" placeholder="Password * " name="password" autocomplete="new-password" id="password" required />
                             </div>
                             <div class="form-group " id="avatarSpace">
                                 <label>Current profile image: </label>
@@ -72,15 +72,20 @@
                                     <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="error-message" id="errorMessage4"></div>
-                                <label>Select a security question: </label><select name="securityType" id="security">
+                            <div class="error-message" id="errorMessage4"></div>
+                            <div class="form-group form-row">
+                                <div class="col">
+                                <label>Select a security question: </label>
+                                </div>
+                                <div class="col">
+                                <select class="form-control" name="securityType" id="security">
                                     <option value="1">Where do you live?</option>
                                     <option value="2">What game do you like?</option>
                                     <option value="3">Who is your favorite athelete?</option>
                                     <option value="4">What is the name of your father?</option>
                                     <option value="5">What is your dream?</option>
-                                  </select>
+                                </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Answer * " id="securityAnswer" name="securityAnswer" required />

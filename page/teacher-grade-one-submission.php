@@ -2,7 +2,7 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
-      <script src="../js/student-choose-exam.js"></script>
+      <script src="../js/teacher-view-exam.js"></script>
    </head>
    <body>
       <div class="wrapper">
@@ -14,13 +14,16 @@
             <ul class="list-unstyled components">
                <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                    <a href="student-dashboard.php">Dashboard</a>
-               </li>
-               <li class="active">
-                    <a href="#">Take Exam</a>
+                    <a href="teacher-dashboard.php">Dashboard</a>
                </li>
                <li>
-                    <a href="student-view-result.php">View Result</a>
+                    <a href="teacher-release-exam.php">Releases an Exam</a>
+               </li>
+               <li class="active">
+                    <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
+               </li>
+               <li>
+                    <a href="teacher-view-exam.php">View Student's Exam</a>
                </li>
             </ul>
          </nav>
@@ -47,14 +50,17 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <form action="../page/student-attempt-exam.php " method="post" id="attemptExam">
-                        <?php include "../functionalphp/student-choose-exam.php";?>
-                        <input type="hidden" id="examNum" name="examNum" value="" />
-                        <input type="hidden" id="course" name="course" value="" />
+                     <form action="../functionalphp/teacher-update-grade-to-server.php" method="post" id="update-grade-to-server">
+                        <?php include '../functionalphp/teacher-get-selectedstudent-ans.php';?>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-lg form-control" onclick="updateStudentGradesToServer();">Confirm Marking</button>
+                            <input type="Submit" id="update-submit" hidden />
+                        </div>
                      </form>
                   </div>
                </div>
             </div>
+
          </div>
       </div>
    </body>

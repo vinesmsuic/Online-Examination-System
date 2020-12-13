@@ -20,9 +20,9 @@
                 $type = $row['userType'];
                 $nick = $row['nickName'];
                 //save data, record cookie for 24hours
-                setcookie("type", $type, time() + 300, '/');
-                setcookie("userID", $ID, time() + 300, '/'); //save data, record cookie for 24hours
-                setcookie("nickName", $nick, time() + 300, '/'); 
+                setcookie("type", $type, time() + 3000, '/');
+                setcookie("userID", $ID, time() + 3000, '/'); //save data, record cookie for 24hours
+                setcookie("nickName", $nick, time() + 3000, '/'); 
                 //login success - Request.responseText to checklogin.js
                 echo $type;
 

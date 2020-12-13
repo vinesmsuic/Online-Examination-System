@@ -57,68 +57,7 @@
                               </h4>
                               <strong>You have these exams this semester.</strong> Please note and good luck!
                            </div>
-                           <table class="table table-striped">
-                              <thead>
-                                 <tr>
-                                    <th>
-                                       Course Code
-                                    </th>
-                                    <th>
-                                       Exam Time
-                                    </th>
-                                    <th>
-                                        Date
-                                    </th>
-                                    <th>
-                                       Remarks
-                                    </th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr>
-                                    <td>
-                                       EIE4432
-                                    </td>
-                                    <td>
-                                       10:00 - 11:00
-                                    </td>
-                                    <td>
-                                       01/12/2020
-                                    </td>
-                                    <td>
-                                       -
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td>
-                                        EIE3333
-                                    </td>
-                                    <td>
-                                        12:00 - 14:00
-                                    </td>
-                                    <td>
-                                        02/12/2020
-                                    </td>
-                                    <td>
-                                        Open Book
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td>
-                                        EIE4435
-                                    </td>
-                                    <td>
-                                        12:00 - 14:00
-                                    </td>
-                                    <td>
-                                        12/12/2020
-                                    </td>
-                                    <td>
-                                       -
-                                    </td>
-                                 </tr>
-                              </tbody>
-                           </table>
+                           <?php include "../functionalphp/student-view-exam.php";?>
                         </div>
                         <div class="col-md-6 pt-3 bg-white border">
                            <blockquote class="blockquote">

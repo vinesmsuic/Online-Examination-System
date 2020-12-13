@@ -2,7 +2,7 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
-      <script src="../js/student-choose-exam.js"></script>
+      <script src="../js/teacher-view-exam.js"></script>
    </head>
    <body>
       <div class="wrapper">
@@ -14,13 +14,16 @@
             <ul class="list-unstyled components">
                <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                    <a href="student-dashboard.php">Dashboard</a>
-               </li>
-               <li class="active">
-                    <a href="#">Take Exam</a>
+                    <a href="teacher-dashboard.php">Dashboard</a>
                </li>
                <li>
-                    <a href="student-view-result.php">View Result</a>
+                    <a href="teacher-release-exam.php">Releases an Exam</a>
+               </li>
+               <li class="active">
+                    <a href="#">Check and Grade a Paper</a>
+               </li>
+               <li>
+                    <a href="teacher-view-exam.php">View Student's Exam</a>
                </li>
             </ul>
          </nav>
@@ -47,14 +50,17 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <form action="../page/student-attempt-exam.php " method="post" id="attemptExam">
-                        <?php include "../functionalphp/student-choose-exam.php";?>
-                        <input type="hidden" id="examNum" name="examNum" value="" />
-                        <input type="hidden" id="course" name="course" value="" />
+                     <h3>View Created Exams</h3>
+                     <form action="teacher-grade-students.php" method="post" id="select-exam">
+                           <?php include '../functionalphp/teacher-get-created-exam.php';?>
+                           <input type="hidden" id="targetCourse" name="targetCourse" value="" />
+                           <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
                      </form>
+                     
                   </div>
                </div>
             </div>
+         
          </div>
       </div>
    </body>

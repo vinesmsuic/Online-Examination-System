@@ -2,10 +2,8 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
-      <script src="../js/teacher-add-questions.js"></script>
    </head>
-
-   <body onload="btnAddQuestion(); getCourseList();">
+   <body onload="">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">
@@ -13,12 +11,15 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-                <?php include '../functionalphp/get-nickname.php'; ?>
+               <?php include '../functionalphp/get-nickname.php'; ?>
                <li class="active">
                   <a href="#">Dashboard</a>
                </li>
                <li>
                   <a href="teacher-release-exam.php">Releases an Exam</a>
+               </li>
+               <li >
+                  <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
                </li>
                <li>
                   <a href="teacher-view-exam.php">View Student's Exam</a>
@@ -45,27 +46,25 @@
                   </div>
                </div>
             </nav>
-
             <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-6">
-		</div>
-		<div class="col-md-6">
-			<div class="jumbotron">
-				<h2>
-					Hello, world!
-				</h2>
-				<p>
-                This is an online examination system where teachers can release an exam and evaluate the student's results, and students and take an exam.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-
+               <div class="row">
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-md-6">
+                     <div class="jumbotron">
+                        <h2>
+                           Hello, world!
+                        </h2>
+                        <p>
+                           This is an online examination system where teachers can release an exam and evaluate the student's results, and students and take an exam.
+                        </p>
+                        <p>
+                           <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </body>

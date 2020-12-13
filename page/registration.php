@@ -12,7 +12,7 @@
 <body class="jumbotron vertical-center" onload="StudentForm();">
     <div class="container login-container">
         <div class="row">
-            <div class="col-md-5 login-form mx-auto">
+            <div class="col-md-6 login-form mx-auto">
                 <h3>Create an account</h3>
                 <h6>I have an account already.<a href="../login.html" class=" "> Login</a></h6>
                 <form class="form" action="../functionalphp/add-account.php " method="post" enctype="multipart/form-data" autocomplete="off " id="registerForm">
@@ -50,11 +50,15 @@
                     <div id="studentform">
                         <div class="form-group">
                             <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Your Birthday * " required/></div>
-                        <div class="form-group" style="text-align: center; width: auto;">
+                        <div class="form-row form-group" style="text-align: center; width: auto;">
+                            <div class="col">
                             <input type="radio" id="male" name="gender" value="M" checked="checked">
-                            <label for="male">Male&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <label for="male">Male</label>
+                            </div>
+                            <div class="col">
                             <input type="radio" id="female" name="gender" value="F">
                             <label for="female">Female</label>
+                            </div>
                         </div>
                     </div>
                     <div id="teacherform">
@@ -70,16 +74,21 @@
                             <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="error-message" id="errorMessage5"></div>
-                        <label>Select a security question: </label><select name="securityType" id="security">
+                    <div class="error-message" id="errorMessage5"></div>
+                    <div class="form-row form-group">
+                        <div class="col">
+                        <label>Select a security question:</label>
+                        </div>
+                        <div class="col">
+                        <select class="form-control" name="securityType" id="security">
                             <option value="-1" selected disabled hidden></option>
                             <option value="1">Where do you live?</option>
                             <option value="2">What game do you like?</option>
                             <option value="3">Who is your favorite athelete?</option>
                             <option value="4">What is the name of your father?</option>
                             <option value="5">What is your dream?</option>
-                          </select>
+                        </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Answer * " name="securityAnswer" required />
