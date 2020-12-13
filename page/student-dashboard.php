@@ -57,7 +57,7 @@
                               </h4>
                               <strong>You have these exams this semester.</strong> Please note and good luck!
                            </div>
-                           <?php include "../functionalphp/student-view-exam.php";?>
+                           <?php include "../functionalphp/student-get-future-exams.php";?>
                         </div>
                         <div class="col-md-6 pt-3 bg-white border">
                            <blockquote class="blockquote">

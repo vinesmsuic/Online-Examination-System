@@ -26,7 +26,7 @@
 
     //Successful
     $alert_message = "Successfully Updated the Server.";
-    $link = "../page/teacher-view-exam.php";
+    $link = "../page/teacher-checkandgrade-exam.php";
     echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
 
 ?>

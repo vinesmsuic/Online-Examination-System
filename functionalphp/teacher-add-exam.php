@@ -20,8 +20,8 @@
         } else {
             $remarks = $_POST['exam-remarks'];
         }
-        $stmt2 = $connect->prepare("INSERT into exams (course, examNum, examDate, startTime, expireTime, creator, remarks) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt2->bind_param("sisssss",$course,$examNum,$examDate,$startTime,$expireTime,$creator,$remarks);
+        $stmt2 = $connect->prepare("INSERT into exams (course, examNum, examDate, startTime, expireTime, creator, graded, remarks) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt2->bind_param("sissssis",$course,$examNum,$examDate,$startTime,$expireTime,$creator,0,$remarks);
         $valid = $stmt2->execute();
         if (!$valid){
             die("Could not successfully run query.2". $connect->connect_error);

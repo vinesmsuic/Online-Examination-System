@@ -50,13 +50,11 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <h3>View Created Exams</h3>
                      <form action="teacher-grade-students.php" method="post" id="select-exam">
                            <?php include '../functionalphp/teacher-get-created-exam.php';?>
                            <input type="hidden" id="targetCourse" name="targetCourse" value="" />
                            <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
                      </form>
-                     
                   </div>
                </div>
             </div>

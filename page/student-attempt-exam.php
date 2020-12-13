@@ -33,8 +33,9 @@
     }
     $result = $stmt->get_result();
     if ($result->num_rows!=0){
-        echo "You have already submitted!";
-        header("Location: ../page/student-dashboard.php");
+        $alert_message = "You have already submitted this exam!";
+        $link = "../page/student-dashboard.php";
+        echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
     }
     $stmt2 = $connect->prepare("SELECT QID, QType, score, question, mc1, mc2, mc3, mc4 FROM exam_questions WHERE course = ? AND examNum = ? ORDER BY QID");
     $stmt2->bind_param("si",$course,$examNum);

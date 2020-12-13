@@ -5,7 +5,7 @@
     $courseNum = intval($_POST['targetCourseNum']);
     $studentID = $_POST['targetstudentID'];
 
-    $stmt1 = $connect->prepare("SELECT QID, answer, submitTime FROM exam_answers WHERE course = ? AND examNum = ? AND studentID = ?");
+    $stmt1 = $connect->prepare("SELECT QID, answer, score, submitTime FROM exam_answers WHERE course = ? AND examNum = ? AND studentID = ?");
     $stmt1->bind_param("sis",$course,$courseNum,$studentID);
     
     $valid = $stmt1->execute();
@@ -16,10 +16,14 @@
     $result1 = $stmt1->get_result();
     
     print '<h3>Grading: Student '.$studentID.' </h3>';
+
+    $totalScore = 0;
+    $fullScore = 0;
     
     while ($row = $result1->fetch_assoc()) {
         $QID = $row['QID'];
         $studentAns = $row['answer'];
+        $studentScore = $row['score'];
 
         //Hardcode to get submittedTime once only
         if($QID == 1)
@@ -139,12 +143,21 @@
             </div> <div class='form-group'> 
             <label>Student's Answer:</label> <div class='container'>".$studentAns."</div> </div> 
             <div class='form-group'> <label>Score Given</label> 
-            <input type='number' class='form-control col-xs-1 container' placeholder='' id='question".$QID."-marked-score' name='question".$QID."-marked-score' min='0' max='".$maxScore."' required /> </div> 
+            <input type='number' class='form-control col-xs-1 container' placeholder='' id='question".$QID."-marked-score' name='question".$QID."-marked-score' value='".$studentScore."' readonly /> </div> 
             </div><br>";
 
         }
+
+        $totalScore += $studentScore;
+        $fullScore += $maxScore;
     }
 
+    echo "<div class='container-fluid p-3 bg-white border question".$QID."'> 
+            <div class='form-group'> <label>Total Student's Score</label> 
+            <input type='number' class='form-control col-xs-1 container' placeholder='' value='".$totalScore."' readonly /> </div>
+            <div class='form-group'> <label>Full Score</label> 
+            <input type='number' class='form-control col-xs-1 container' placeholder='' value='".$fullScore."' readonly /> </div>  
+            </div><br>";
     
     echo "<input type='hidden' id='targetCourse' name='targetCourse' value='".$course."' />";
     echo "<input type='hidden' id='targetCourseNum' name='targetCourseNum' value='".$courseNum."' />";
@@ -153,7 +166,3 @@
     $connect->close();
 
 ?>
-
-<script>
-document.getElementById("submitted-time").innerHTML = $submittedTime;
-</script>

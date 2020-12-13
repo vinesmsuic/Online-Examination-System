@@ -56,7 +56,10 @@
                            <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
                            <input type="hidden" id="targetstudentID" name="targetstudentID" value="" />
                      </form>
-                     
+                     <form action="../functionalphp/teacher-release-results.php" method="post" id="release-results">
+                            <input type="hidden" id="releaseCourse" name="releaseCourse" value="" />
+                           <input type="hidden" id="releaseCourseNum" name="releaseCourseNum" value="" />
+                     </form>
                   </div>
                </div>
             </div>

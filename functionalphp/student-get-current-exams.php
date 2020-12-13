@@ -27,7 +27,7 @@
                 } else {
                     print $row['remarks'] . "</td><td>";
                 }
-                print "<a class='btn btn-info' onclick='AttemptExam(\"".$row['course']."\",".$row['examNum'].");'><i class='fas fa-pen'></i></a></td></tr>";
+                print "<a class='btn btn-info' onclick='ChooseExam(\"".$row['course']."\",".$row['examNum'].");'><i class='fas fa-pen'></i></a></td></tr>";
             }
             print '</tbody></table>';
         }

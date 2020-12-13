@@ -47,8 +47,8 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <form action="../page/student-attempt-exam.php " method="post" id="attemptExam">
-                        <?php include "../functionalphp/student-choose-exam.php";?>
+                     <form action="../page/student-attempt-exam.php " method="post" id="chooseExam">
+                        <?php include "../functionalphp/student-get-current-exams.php";?>
                         <input type="hidden" id="examNum" name="examNum" value="" />
                         <input type="hidden" id="course" name="course" value="" />
                      </form>

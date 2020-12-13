@@ -50,8 +50,19 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
+                  <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h3>View Graded Exams</h3>
+                     <form action="teacher-view-graded-students.php" method="post" id="select-graded-exam">
+                           <?php include '../functionalphp/teacher-get-graded-exams.php';?>
+                           <input type="hidden" id="targetCourse" name="targetCourse" value="" />
+                           <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
+                     </form>
                      
-                     
+                  </div>
+               </div>
+            </div>
                   </div>
                </div>
             </div>
