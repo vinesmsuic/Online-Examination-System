@@ -13,7 +13,7 @@ function login() {
             } else if (respond == "student"){
                 window.location.href = "page/student-dashboard.php";
             } else if (respond == "teacher"){
-                window.location.href = "page/teacher-release-exam.php";
+                window.location.href = "page/teacher-dashboard.php";
             } else{
                 document.getElementById("errorMessage").innerText = respond;
             }
@@ -35,7 +35,7 @@ function redirect() {
             } else if (respond == "student"){
                 window.location.href = "page/student-dashboard.php";
             } else if (respond == "teacher"){
-                window.location.href = "page/teacher-release-exam.php";
+                window.location.href = "page/teacher-dashboard.php";
             }
         }
     }

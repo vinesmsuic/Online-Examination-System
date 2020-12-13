@@ -1,5 +1,7 @@
 <?php
         include "mysql-connect.php";
+
+        //get Info from admin-view-info.php (admin-manage.js) 
         $originalID = $_POST['originalID'];
         $ID = $_POST['userid'];
         $nickName = $_POST['nickname'];
@@ -25,7 +27,7 @@
         $imgUpload = $_POST['imgUpload'];
         if ($imgUpload=="true"){
             // File upload path
-            $targetDir = "../img/";
+            $targetDir = "../img/client/";
             $fileName = basename($_FILES["avatar"]["name"]);
             $targetFilePath = $targetDir . $fileName;
             $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);

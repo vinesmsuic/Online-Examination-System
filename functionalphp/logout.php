@@ -1,0 +1,11 @@
+<?php
+    if (isset($_COOKIE["type"])){
+        setcookie("type", $_COOKIE["type"], time() - 3600);
+    }
+    if (isset($_COOKIE["userID"])){
+        setcookie("userID", $_COOKIE["userID"], time() - 3600);
+    }
+    $alert_message = "You have logged out!";
+    $link = "../login.html";
+    echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
+?>

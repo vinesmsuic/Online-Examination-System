@@ -13,9 +13,9 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-               <p>Welcome! User</p>
+               <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                  <a href="#">Dashboard</a>
+                  <a href="teacher-dashboard.php">Dashboard</a>
                </li>
                <li class="active">
                   <a href="#">Releases an Exam</a>
@@ -39,7 +39,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
-                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                      </ul>
                   </div>
@@ -56,7 +56,8 @@
                         <div class='dynamic-question-field'>
                            <!--Generate Questions Here When User click "Add Questions"-->
                         </div>
-                        <input type="hidden" name="QuestionNumber" id="question-number" value="0" />
+                        <input type="hidden" name="question-number" id="question-number" value="0" />
+                        <input type="hidden" name="creator" id="creator" value="<?php if (ISSET($_COOKIE['userID'])) { echo $_COOKIE['userID'];}?>" />
                         <input type="Submit" id="submit" hidden />
                   </div>
                   <div class="col-md-5">
@@ -75,6 +76,7 @@
                               </label>
                               <input type="date" id="exam-date" name="exam-date" required />
                            </div>
+                           <div class="error-message" id="errorMessage2" style="color:red;"></div>
                            <div class="form-row form-group">
                               <div class="col">
                                  <label for="start-time">Start Time: </label>
@@ -86,7 +88,7 @@
                               </div>
                            </div>
                            <div class="form-group">
-                              <label for="exam-remarks">Remarks (Optional):</label><input type="text" class="form-control" id="exam-remarks" />
+                              <label for="exam-remarks">Remarks (Optional):</label><input type="text" class="form-control" id="exam-remarks" name="exam-remarks" />
                            </div>
                            <div class="form-row form-group">
                               <div class="col">

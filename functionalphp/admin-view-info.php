@@ -20,9 +20,9 @@
             print $row['PW'] . "</td><td>";
             print $row['nickName'] . "</td><td>";
             print $row['email'] . "</td><td>";
-            print "<img src='../img/" . $row['profileImage'] . "' alt='' class='profileimage' /></td><td>";
-            print "<a class='btn btn-block btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
-            print "<a class='btn btn-block btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
+            print "<img src='../img/client/" . $row['profileImage'] . "' alt='' class='profileimage' /></td><td>";
+            print "<a class='btn btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
+            print "<a class='btn btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
         }
         print "</table>";
         print "<div class='line'></div>";
@@ -46,10 +46,10 @@
             print $row['PW'] . "</td><td>";
             print $row['nickName'] . "</td><td>";
             print $row['email'] . "</td><td>";
-            print "<img src='../img/" . $row['profileImage'] . "' alt='' class='profileimage' /> </td><td>";
+            print "<img src='../img/client/" . $row['profileImage'] . "' alt='' class='profileimage' /> </td><td>";
             print $row['course'] . "</td><td>";
-            print "<a class='btn btn-block btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
-            print "<a class='btn btn-block btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
+            print "<a class='btn btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
+            print "<a class='btn btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
         }
         print "</table>";
         print "<div class='line'></div>";
@@ -73,11 +73,11 @@
             print $row['PW'] . "</td><td>";
             print $row['nickName'] . "</td><td>";
             print $row['email'] . "</td><td>";
-            print "<img src='../img/" . $row['profileImage'] . "' alt='' class='profileimage' /> </td><td>";
+            print "<img src='../img/client/" . $row['profileImage'] . "' alt='' class='profileimage' /> </td><td>";
             print $row['gender'] . "</td><td>";
             print $row['birthday'] . "</td><td>";
-            print "<a class='btn btn-block btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
-            print "<a class='btn btn-block btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
+            print "<a class='btn btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
+            print "<a class='btn btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
         }
         
         print "</table>";

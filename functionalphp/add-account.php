@@ -1,5 +1,7 @@
 <?php
-		include "mysql-connect.php";
+        include "mysql-connect.php";
+        
+        //Get values from registration.php form
         $ID = $_POST['userid'];
         $nickName = $_POST['nickname'];
         $email = $_POST['email'];
@@ -21,8 +23,11 @@
         }
         $securityType = intval($_POST['securityType']);
         $securityAnswer = $_POST['securityAnswer'];
+
+
         // File upload path
-        $targetDir = "../img/";
+        // Max: Need to create a new folder for storing images - e.g. ../img/client
+        $targetDir = "../img/client";
         $fileName = basename($_FILES["avatar"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
@@ -60,7 +65,8 @@
                         {
                             $link = "../login.html";
                         }
-                        
+
+                        //Direct to different page according to user account type (Workaround)
                         echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
                         
                     }else{

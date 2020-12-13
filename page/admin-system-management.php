@@ -35,7 +35,7 @@
                            <div class="nav-link active">Welcome! Admin</div>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                      </ul>
                   </div>

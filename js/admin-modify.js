@@ -1,5 +1,4 @@
 function InfoSet(ID) {
-    console.log(ID);
     document.getElementById("message").innerText = "Modifying Account ID: " + ID;
     var Request = new XMLHttpRequest();
     var info = "?enterID=" + ID;
@@ -26,7 +25,7 @@ function InfoSet(ID) {
             document.getElementById("email").value = accountInfo.email;
             document.getElementById("security").value = accountInfo.sQType;
             document.getElementById("securityAnswer").value = accountInfo.sQAnswer;
-            document.getElementById("avatarSpace").innerHTML = "<label>Current profile image: </label>&nbsp;&nbsp;&nbsp;&nbsp;<img src='../img/" + accountInfo.profileImage + "' alt='' class='profileimage' />&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='Change' class='btn btn-primary' onclick='ChangeImage();' />";
+            document.getElementById("avatarSpace").innerHTML = "<label>Current profile image: </label>&nbsp;&nbsp;&nbsp;&nbsp;<img src='../img/client/" + accountInfo.profileImage + "' alt='' class='profileimage' />&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='Change' class='btn btn-primary' onclick='ChangeImage();' />";
             document.getElementById("nickName").value = accountInfo.nickName;
             if (accountInfo.userType == "student") {
                 document.getElementById("studentform").hidden = false;

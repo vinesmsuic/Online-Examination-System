@@ -34,7 +34,6 @@
         });
     </script>
     <h5 id='question1'>Question 1</h5>
-    <form role='form'>
         <div class='form-group'>
             <label>Question:</label>
             <textarea class='form-control' id='question1-q' name='question1-q' rows='3'></textarea>
@@ -97,6 +96,5 @@
              </select>
             </div>
         </div>
-    </form>
 </div>
 <br>

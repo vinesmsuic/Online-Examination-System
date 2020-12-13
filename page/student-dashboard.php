@@ -11,7 +11,7 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-               <p>Welcome! User</p>
+               <?php include '../functionalphp/get-nickname.php'; ?>
                <li class="active">
                     <a href="#">Dashboard</a>
                </li>
@@ -37,27 +37,12 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
-                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                      </ul>
                   </div>
                </div>
             </nav>
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="jumbotron">
-                        <h2>Welcome!</h2>
-                        <p>
-                            This is an online examination system where teachers can release an exam and evaluate the student's results, and students and take an exam.   
-                        </p>
-                        <p>
-                           <a class="btn btn-primary btn-large" href="#">Learn more</a>
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">

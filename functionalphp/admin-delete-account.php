@@ -2,6 +2,7 @@
 
     include "mysql-connect.php";
 
+    //get Info from admin-view-info.php (admin-manage.js) 
     $account = $_GET['enterID'];
 
     if($account != ""){

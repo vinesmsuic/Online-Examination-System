@@ -2,7 +2,6 @@
 <html>
    <head>
         <?php include '../functionalphp/main-head.php';?>
-      <?php //include '../functionalphp/registration-head.php';?>
 	  <script src="../js/registration.js"></script>
    </head>
    <body onload="StudentForm();">
@@ -80,16 +79,21 @@
                                     <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-row form-group">
+                              <div class="col">
                                 <div class="error-message" id="errorMessage5"></div>
-                                <label>Select a security question: </label><select name="securityType" id="security">
+                                <label>Select a security question: </label>
+                              </div>
+                              <div class="col">
+                                <select name="securityType" id="security">
                                     <option value="-1" selected disabled hidden></option>
                                     <option value="1">Where do you live?</option>
                                     <option value="2">What game do you like?</option>
                                     <option value="3">Who is your favorite athelete?</option>
                                     <option value="4">What is the name of your father?</option>
                                     <option value="5">What is your dream?</option>
-                                  </select>
+                                </select>
+                              </div>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Answer * " name="securityAnswer" required />

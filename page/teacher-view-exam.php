@@ -11,9 +11,9 @@
                <h3>Online Examination System</h3>
             </div>
             <ul class="list-unstyled components">
-               <p>Welcome! User</p>
+               <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                  <a href="#">Dashboard</a>
+                  <a href="teacher-dashboard.php">Dashboard</a>
                </li>
                <li >
                   <a href="teacher-release-exam.php">Releases an Exam</a>
@@ -37,7 +37,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
-                           <a class="nav-link" href="../login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                      </ul>
                   </div>

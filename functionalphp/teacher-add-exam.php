@@ -1,70 +1,69 @@
 <?php
 		include "mysql-connect.php";
-		
-        $questionNum = intval($_POST['question-number']);
+        
+        $creator = $_POST['creator'];
         $course = $_POST['course-name'];
-        for ($i = 1; $i <= $questionNum; $i++){
-            
-        }
-        $stmt = $connect->prepare("SELECT examNum FROM courses WHERE course = ?");
+        $stmt = $connect->prepare("SELECT COALESCE(MAX(examNum), 0) as 'NextNum' FROM exams WHERE course = ?");
         $stmt->bind_param("s",$course);
         $valid = $stmt->execute();
         if (!$valid){
-	    	die("Could not successfully run query.". $connect->connect_error);
+	    	die("Could not successfully run query.1". $connect->connect_error);
         }
         $result = $stmt->get_result();
-	    if ($result->num_rows==0){
-            $stmt2 = $connect->prepare("INSERT into courses (course, examNum) VALUES (?, ?)");
-            $examNum = 1;
-            $stmt2->bind_param("si",$course,$examNum);
-            $valid = $stmt2->execute();
-            if (!$valid){
-                die("Could not successfully run query.". $connect->connect_error);
-            }
-	    } else {
-            $row = $result->fetch_assoc();
-            $examNum = $row['examNum'];
-            $stmt2 = $connect->prepare("UPDATE courses SET examNum = ? WHERE course = ?");
-            $stmt2->bind_param("is",$examNum+1,$course);
-            $valid = $stmt2->execute();
-
-
-        $stmt = $connect->prepare("CREATE TABLE [course+"_"+examno.] (
-            ID int PRIMARY KEY IDENTITY(1,1),
-            course varchar(64) NOT NULL,
-            QType varchar(64) NOT NULL,
-            score double(4) NOT NULL,
-            question varchar(200) NOT NULL,
-            answer varchar(200) NOT NULL,
-            mcOptions varchar(64)
-           )");
-        $valid = $stmt->execute();
+        $row = $result->fetch_assoc();
+        $examNum = $row['NextNum']+1;
+        $examDate = $_POST['exam-date'];
+        $startTime = $_POST['start-time'];
+        $expireTime = $_POST['end-time'];
+        if (strlen($_POST['exam-remarks'])==0) {
+            $remarks = NULL;
+        } else {
+            $remarks = $_POST['exam-remarks'];
+        }
+        $stmt2 = $connect->prepare("INSERT into exams (course, examNum, examDate, startTime, expireTime, creator, remarks) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt2->bind_param("sisssss",$course,$examNum,$examDate,$startTime,$expireTime,$creator,$remarks);
+        $valid = $stmt2->execute();
         if (!$valid){
-	    	die("Could not successfully run query.". $connect->connect_error);
+            die("Could not successfully run query.2". $connect->connect_error);
         }
-        $stmt->bind_param("s",$ID);
-        $valid = $stmt->execute();
-	    if (!$valid){
-	    	die("Could not successfully run query.". $connect->connect_error);
-        }
-        $result = $stmt->get_result();
-	    if ($result->num_rows==0){
-            //display message of no such student/teacher/admin
-	    	echo "Failed to find an account with the input ID.";
-	    } else {
-            $row = $result->fetch_assoc();
-            if ($PW == $row['PW']) {
-                $type = $row['userType'];
-                //save data, record cookie for 24hours
-                setcookie("type", $type, time() + 60);
-                setcookie("userID", $ID, time() + 60);//save data, record cookie for 24hours
-                //login success
-                echo $type;
-
+        /*
+        $databaseName = "`".$course."_".$examNum."`";
+        $stmt3 = $connect->prepare("CREATE TABLE $databaseName (course varchar(64) NOT NULL, examNum INT NOT NULL, QID INT NOT NULL, QType INT NOT NULL, score DOUBLE(4,2) NOT NULL, question varchar(512) NOT NULL, answer INT, mc1 varchar(64), mc2 varchar(64), mc3 varchar(64), mc4 varchar(64), percent double(4,2), average double(4,2), PRIMARY KEY (course, examNum, QID))");
+        $valid = $stmt3->execute();
+        if (!$valid){
+            die("Could not successfully run query.3". $connect->connect_error);
+        }*/
+        $questionNum = intval($_POST['question-number']);
+        $stmt4 = $connect->prepare("INSERT INTO exam_questions (course, examNum, QID, QType, score, question, answer, mc1, mc2, mc3, mc4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        for ($i = 1; $i <= $questionNum; $i++){
+            $QType = intval($_POST['question'.$i.'-type']);
+            $score = floatval($_POST['question'.$i.'-score']);
+            $question = $_POST['question'.$i.'-q'];
+            if (intval($_POST['question'.$i.'-type'])==1){
+                $mc1 = $_POST['question'.$i.'-mc-choice1'];
+                $mc2 = $_POST['question'.$i.'-mc-choice2'];
+                $mc3 = $_POST['question'.$i.'-mc-choice3'];
+                $mc4 = $_POST['question'.$i.'-mc-choice4'];
+                $answer = intval($_POST['question'.$i.'-mcq-correct']);
             } else {
-                //display message of password error
-                echo "The input password does not match the account password.";
+                $mc1 = NULL;
+                $mc2 = NULL;
+                $mc3 = NULL;
+                $mc4 = NULL;
+                if (intval($_POST['question'.$i.'-type'])==2){
+                    $answer = intval($_POST['question'.$i.'-tfq-correct']);
+                } else {
+                    $answer = NULL;
+                }
+            }
+            $stmt4->bind_param("siiidsissss",$course,$examNum,$i,$QType,$score,$question,$answer,$mc1,$mc2,$mc3,$mc4);
+            $valid = $stmt4->execute();
+            if (!$valid){
+                die("Could not successfully run query.4". $connect->connect_error);
             }
         }
+        $alert_message = "Exam Posted Successfully! You will be redirected in a few seconds.";
+        $link = "../page/teacher-view-exam.php";
+        echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
         $connect->close();
 ?>

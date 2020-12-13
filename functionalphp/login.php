@@ -1,9 +1,10 @@
 <?php
 		include "mysql-connect.php";
-		
+        
+        //get Info from login.html
         $ID = $_GET['enterID'];
         $PW = $_GET['password'];
-        $stmt = $connect->prepare("SELECT PW, userType FROM users WHERE ID = ?");
+        $stmt = $connect->prepare("SELECT PW, userType, nickName FROM users WHERE ID = ?");
         $stmt->bind_param("s",$ID);
         $valid = $stmt->execute();
 	    if (!$valid){
@@ -17,10 +18,12 @@
             $row = $result->fetch_assoc();
             if ($PW == $row['PW']) {
                 $type = $row['userType'];
+                $nick = $row['nickName'];
                 //save data, record cookie for 24hours
-                setcookie("type", $type, time() + 60);
-                setcookie("userID", $ID, time() + 60);//save data, record cookie for 24hours
-                //login success
+                setcookie("type", $type, time() + 300, '/');
+                setcookie("userID", $ID, time() + 300, '/'); //save data, record cookie for 24hours
+                setcookie("nickName", $nick, time() + 300, '/'); 
+                //login success - Request.responseText to checklogin.js
                 echo $type;
 
             } else {
