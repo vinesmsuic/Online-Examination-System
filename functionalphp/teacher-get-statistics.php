@@ -40,13 +40,13 @@
                 <div class='container'>
                     <div class='row'>
                         <div class='col-lg'>
-                            <label>Max: ".number_format((float)$maxTotalScore, 2, '.', '')." </label>
+                            <label>Max: ".number_format((float)$maxTotalScore, 1, '.', '')." </label>
                         </div>
                         <div class='col-lg'>
-                            <label>Min: ".number_format((float)$minTotalScore, 2, '.', '')." </label>
+                            <label>Min: ".number_format((float)$minTotalScore, 1, '.', '')." </label>
                         </div>
                         <div class='col-lg'>
-                            <label>Median: ".number_format((float)$medianTotalScore, 2, '.', '')." </label>
+                            <label>Median: ".number_format((float)$medianTotalScore, 1, '.', '')." </label>
                         </div>
                         <div class='col-lg'>
                             <label>Average: ".number_format((float)$averageTotalScore, 2, '.', '')." </label>
@@ -158,7 +158,7 @@
                     <label>Correct Rate: ".$correctRate."% </label>
                 </div>
                 <div class='col-sm'>
-                    <label>Average Student Score: ".$avgStudentScore." </label>
+                    <label>Average Student Score: ".number_format((float)$avgStudentScore, 2, '.', '')." </label>
                 </div>
                 </div>
                 </div> 
@@ -181,7 +181,7 @@
                     <label>Correct Rate: ".$correctRate."% </label>
                 </div>
                 <div class='col-sm'>
-                    <label>Average Student Score: ".$avgStudentScore." </label>
+                    <label>Average Student Score: ".number_format((float)$avgStudentScore, 2, '.', '')." </label>
                 </div>
                 </div>
                 </div> 
@@ -209,7 +209,7 @@
                     <label>Correct Rate: ".$correctRate."% </label>
                 </div>
                 <div class='col-sm'>
-                    <label>Average Student Score: ".$avgStudentScore." </label>
+                    <label>Average Student Score: ".number_format((float)$avgStudentScore, 2, '.', '')." </label>
                 </div>
                 </div>
                 </div> 
