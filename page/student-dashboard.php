@@ -48,6 +48,7 @@
                               <p class="mb-0" id="motivation"></p>
                               <footer class="blockquote-footer" id="motivation-footer"></footer>
                            </blockquote>
+                           <hr>
                            <h6>Exam Tips</h6>
                            <div class="row">
                               <div class="col-md-6">

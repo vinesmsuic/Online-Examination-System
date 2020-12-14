@@ -60,7 +60,7 @@
                                  View Student's Exam
                               </dt>
                               <dd>
-                                 Statistics of an exam is available to you once the exam is published. You can also inspect individual submissions of all students who participated in the exam.qa
+                                 General statistics of an exam is available to you once the exam is published. You can also inspect individual submissions of all students who participated in the exam.
                               </dd>
                            </dl>
                         </div>
