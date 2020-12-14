@@ -23,7 +23,7 @@
                 print $row['startTime'] ."-". $row['expireTime'] . "</td><td>";
                 print $row['examDate'] . "</td><td>";
                 if (strlen($row['remarks'])==0) {
-                    print " - </td><td></tr>";
+                    print " - </td><td>";
                 } else {
                     print $row['remarks'] . "</td><td>";
                 }

@@ -34,7 +34,7 @@
         if(!empty($_FILES["avatar"]["name"])){
             $statusMsg = '';
 	        // Allow certain file formats
-            $allowTypes = array('jpg','png','jpeg');
+            $allowTypes = array('jpg','png','jpeg','gif');
             if(in_array($fileType, $allowTypes)){
                 //overwrite file if existed
                 if(file_exists($targetFilePath)) {
@@ -86,12 +86,12 @@
                
                 if($accFrom == "admin")
                 {
-                    $alert_message = "Sorry, only JPG, JPEG & PNG files are allowed to upload. Please modify the account again.";
+                    $alert_message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed to upload. Please modify the account again.";
                     $link = "../page/admin-system-management.php";
                 }
                 else
                 {
-                    $alert_message = "Sorry, only JPG, JPEG & PNG files are allowed to upload. Please register again.";
+                    $alert_message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed to upload. Please register again.";
                     $link = "../page/registration.php";
                 }
                 //Direct to different page according to user account type (Workaround)

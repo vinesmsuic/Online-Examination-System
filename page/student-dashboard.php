@@ -26,29 +26,12 @@
          </nav>
          <!-- Page Content  -->
          <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container-fluid">
-                  <button type="button" id="sidebarCollapse" class="btn btn-info">
-                  <i class="fas fa-align-left"></i>
-                  <span></span>
-                  </button>
-                  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-align-justify"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </nav>
+            <?php include "main-navtop.php";?>
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
                      <div class="row">
-                        <div class="col-md-6 pt-3 bg-white border">
+                        <div class="col-md-6 p-3 bg-white border">
                            <div class="alert alert-dismissable alert-info">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                               ×
@@ -60,60 +43,46 @@
                            </div>
                            <?php include "../functionalphp/student-get-future-exams.php";?>
                         </div>
-                        <div class="col-md-6 pt-3 bg-white border">
+                        <div class="col-md-6 p-3 bg-white border">
                            <blockquote class="blockquote">
                               <p class="mb-0" id="motivation"></p>
                               <footer class="blockquote-footer" id="motivation-footer"></footer>
                            </blockquote>
+                           <h6>Exam Tips</h6>
                            <div class="row">
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                  <div class="card">
-                                    <img class="card-img-top" alt="Bootstrap Thumbnail First" src="https://www.layoutit.com/img/people-q-c-600-200-1.jpg" />
+                                    <img class="card-img-top" alt="Bootstrap Thumbnail First" src="../img/studytips-1.jpg" />
                                     <div class="card-block">
                                        <h5 class="card-title">
-                                          Card title
+                                          Practice on pastpapers
                                        </h5>
                                        <p class="card-text">
-                                          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                          One of the most effective ways to prepare for exams is to practice taking past versions. This helps you get used to the format of the questions, and - if you time yourself - can also be good practice for making sure you spend the right amount of time on each section.
                                        </p>
                                        <p>
-                                          <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+                                          
                                        </p>
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                  <div class="card">
-                                    <img class="card-img-top" alt="Bootstrap Thumbnail Second" src="https://www.layoutit.com/img/city-q-c-600-200-1.jpg" />
+                                    <img class="card-img-top" alt="Bootstrap Thumbnail Second" src="../img/studytips-2.jpg" />
                                     <div class="card-block">
                                        <h5 class="card-title">
-                                          Card title
+                                          Plan your exam day
                                        </h5>
                                        <p class="card-text">
-                                          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                          Make sure you get everything ready well in advance of the exam - don't leave it to the day before to suddenly realize you don't know the way, or what you're supposed to bring. Check all the rules and requirements, and plan your route and journey time. If possible, do a test run of the trip. If not, write down clear directions.
                                        </p>
                                        <p>
-                                          <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+                                          
                                        </p>
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-md-4">
-                                 <div class="card">
-                                    <img class="card-img-top" alt="Bootstrap Thumbnail Third" src="https://www.layoutit.com/img/sports-q-c-600-200-1.jpg" />
-                                    <div class="card-block">
-                                       <h5 class="card-title">
-                                          Card title
-                                       </h5>
-                                       <p class="card-text">
-                                          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                       </p>
-                                       <p>
-                                          <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-                                       </p>
-                                    </div>
-                                 </div>
-                              </div>
+
                            </div>
                         </div>
                      </div>

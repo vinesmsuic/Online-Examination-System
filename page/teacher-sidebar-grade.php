@@ -10,10 +10,10 @@
       <li>
          <a href="teacher-release-exam.php">Releases an Exam</a>
       </li>
-      <li>
+      <li class="active">
          <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
       </li>
-      <li class="active">
+      <li>
          <a href="teacher-view-exam.php">View Student's Exam</a>
       </li>
    </ul>

@@ -30,24 +30,7 @@
          </nav>
          <!-- Page Content  -->
          <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container-fluid">
-                  <button type="button" id="sidebarCollapse" class="btn btn-info">
-                  <i class="fas fa-align-left"></i>
-                  <span></span>
-                  </button>
-                  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-align-justify"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </nav>
+            <?php include "main-navtop.php";?>
 
 
             <div class="container-fluid">
@@ -72,13 +55,14 @@
                               <div class="error-message" id="errorMessage1" style="color:red;"></div>
                               <label for="course-name">Course Code:</label><select type="text" class="form-control" id="course-name" name="course-name" ></select>
                            </div>
+                           <div class="error-message" id="errorMessage2" style="color:red;"></div>
                            <div class="form-group">
                               <label for="exam-date">
                               Exam Date: 
                               </label>
                               <input type="date" id="exam-date" name="exam-date" required />
                            </div>
-                           <div class="error-message" id="errorMessage2" style="color:red;"></div>
+                           <div class="error-message" id="errorMessage3" style="color:red;"></div>
                            <div class="form-row form-group">
                               <div class="col">
                                  <label for="start-time">Start Time: </label>

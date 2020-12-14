@@ -1,7 +1,6 @@
-var answer,userID;
 function GetQuestion(){
     document.getElementById("errorMessage1").innerText = "";
-    userID = document.getElementById("userID").value;
+    var userID = document.getElementById("userID").value;
     if (userID==""){
         document.getElementById("errorMessage1").innerText = "Please input an ID.";
     } else {
@@ -13,6 +12,7 @@ function GetQuestion(){
         var respond = Request.responseText;
         if (respond != "No such account") {
             document.getElementById("userID").value = userID;
+            var valid = true;
             var accountInfo = JSON.parse(Request.responseText);
             document.getElementById("questionType").value = accountInfo.SQType;
             document.getElementById("sampleAnswer").value = accountInfo.SQAnswer;
@@ -28,8 +28,13 @@ function GetQuestion(){
                 case 5: document.getElementById("question").innerText = "What is your dream?";
                     break;
             }
-            document.getElementById("DialogBox1").hidden = true;
-            document.getElementById("DialogBox2").hidden = false;
+            if (document.getElementById("questionType").value!=""){
+                document.getElementById("DialogBox1").hidden = true;
+                document.getElementById("DialogBox2").hidden = false;
+            } else {
+                document.getElementById("errorMessage1").innerText = "This account does not have a security question.";
+            }
+            
         } else {
             document.getElementById("errorMessage1").innerText = "Failed to find an account with the input ID.";
         }

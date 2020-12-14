@@ -34,7 +34,7 @@
             if(!empty($_FILES["avatar"]["name"])){
                 $statusMsg = '';
 	            // Allow certain file formats
-                $allowTypes = array('jpg','png','jpeg');
+                $allowTypes = array('jpg','png','jpeg','gif');
                 if(in_array($fileType, $allowTypes)){
                     //overwrite file if existed
                     if(file_exists($targetFilePath)) {
@@ -59,7 +59,7 @@
                 }else{
                     //Alert admin that the file type is unaccepted
             
-                    $alert_message = "Sorry, only JPG, JPEG & PNG files are allowed to upload. Please modify the account again.";
+                    $alert_message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed to upload. Please modify the account again.";
                     $link = "../page/admin-system-management.php";
                 
                     echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";

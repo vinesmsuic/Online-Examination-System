@@ -3,7 +3,7 @@ body {
 }
 
 .profileimage {
-    width: auto;
+    max-width: 35px;
     max-height: 35px;
 }
 
@@ -12,4 +12,8 @@ body {
     bottom: 25px;
     right: 25px;
     display: none;
+}
+
+td, th{
+    text-align:center;
 }

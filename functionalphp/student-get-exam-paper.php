@@ -75,7 +75,7 @@
             print "</div>";
         }
     }
-    $stmt3 = $connect->prepare("SELECT expireTime FROM exams WHERE course = ? and examNum = ?");
+    $stmt3 = $connect->prepare("SELECT expireTime, startTime FROM exams WHERE course = ? and examNum = ?");
     $stmt3->bind_param("si",$course,$examNum);
     $valid = $stmt3->execute();
     if (!$valid){
@@ -83,10 +83,13 @@
     }
     $result3 = $stmt3->get_result();
     $row = $result3->fetch_assoc();
-    $timeValues = explode(":",$row['expireTime']);
+    $endTimeValues = explode(":",$row['expireTime']);
+    $startTimeValues = explode(":",$row['startTime']);
     date_default_timezone_set("Asia/Hong_Kong");
-    $timer = (Intval($timeValues[0])-Intval(date("H")))*60*60*1000+(Intval($timeValues[1])-Intval(date("i"))-1)*60*1000+(60-Intval(date("s")))*1000;
+    $timer = (Intval($endTimeValues[0])-Intval(date("H")))*60*60*1000+(Intval($endTimeValues[1])-Intval(date("i"))-1)*60*1000+(60-Intval(date("s")))*1000;
+    $fulltime = (Intval($endTimeValues[0])-Intval($startTimeValues[0]))*60*60*1000+(Intval($endTimeValues[1])-Intval($startTimeValues[1]))*60*1000;
     print '<input type="hidden" id="Timer" value="'.$timer.'" />';
+    print '<input type="hidden" id="FullTime" value="'.$fulltime.'" />';
     print '<input type="hidden" name="NumOfQuestions" id="NumOfQuestions" value="'.$result2->num_rows.'" />';
     $connect->close();
 ?>

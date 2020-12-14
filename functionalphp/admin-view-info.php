@@ -13,16 +13,21 @@
 
         print "<h3>Admin Accounts</h3>";
         print "<table class='table table-striped table-danger'>";
-        print "<tr><th>ID</th><th>Password</th><th>Nickname</th><th>Email</th><th>Profile Image</th><th></th><th></th></tr>";
+        print "<tr><th>ID</th><th>Password</th><th>Nickname</th><th>Email</th><th>Profile Image</th>";
+        //print "<th></th><th></th>";
+        print"</tr>";
 	    while ($row = $result->fetch_assoc()) {
             print "<tr><td>";
             print $row['ID'] . "</td><td>";
             print $row['PW'] . "</td><td>";
             print $row['nickName'] . "</td><td>";
             print $row['email'] . "</td><td>";
-            print "<img src='../img/client/" . $row['profileImage'] . "' alt='' class='profileimage' /></td><td>";
-            print "<a class='btn btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
-            print "<a class='btn btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td></tr>";
+            print "<img src='../img/client/" . $row['profileImage'] . "' alt='' class='profileimage' /></td>";
+            //Modifying and deleting admin account is possible, but it seems weird for an admin to be able to modify another admin
+            //So we disabled it for now, the follow two button allows it
+            /*print "<td><a class='btn btn-info' onclick='btnModify(\"".$row['ID']."\");'><i class='far fa-edit'></i></a></td><td>";
+            print "<a class='btn btn-danger' onclick='btnDelete(\"".$row['ID']."\");'><i class='far fa-trash-alt'></i></a></td>";*/
+            print "</tr>";
         }
         print "</table>";
         print "<div class='line'></div>";

@@ -10,6 +10,11 @@
             <div class="col-md-10 login-form mx-auto">
                 <div class="container-fluid p-3 bg-white border">
                     <h3>Exam Questions</h3>
+                    <h4 id="DisplayTimeValue"></h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" id="DisplayTimer"></div>
+                    </div>
+                    </br>
                     <form class="form" action="../functionalphp/student-submit-exam.php " method="post" enctype="multipart/form-data" id="submitExam">
                     <input type="hidden" name="course" id="course" value="<?php echo $_POST['course'];?>" />
                     <input type="hidden" name="examNum" id="examNum" value="<?php echo $_POST['examNum'];?>" />

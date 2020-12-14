@@ -5,16 +5,13 @@
    <ul class="list-unstyled components">
       <?php include '../functionalphp/get-nickname.php'; ?>
       <li>
-         <a href="teacher-dashboard.php">Dashboard</a>
+         <a href="student-dashboard.php">Dashboard</a>
       </li>
       <li>
-         <a href="teacher-release-exam.php">Releases an Exam</a>
-      </li>
-      <li>
-         <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
+         <a href="student-take-exam.php">Take Exam</a>
       </li>
       <li class="active">
-         <a href="teacher-view-exam.php">View Student's Exam</a>
+         <a href="student-view-result.php">View Result</a>
       </li>
    </ul>
 </nav>

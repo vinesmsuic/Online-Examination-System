@@ -28,40 +28,47 @@
          </nav>
          <!-- Page Content  -->
          <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container-fluid">
-                  <button type="button" id="sidebarCollapse" class="btn btn-info">
-                  <i class="fas fa-align-left"></i>
-                  <span></span>
-                  </button>
-                  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-align-justify"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                           <a class="nav-link" href="../functionalphp/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </nav>
+            <?php include "main-navtop.php";?>
             <div class="container-fluid">
                <div class="row">
-                  <div class="col-md-6">
-                  </div>
-                  <div class="col-md-6">
-                     <div class="jumbotron">
-                        <h2>
-                           Hello, world!
-                        </h2>
-                        <p>
-                           This is an online examination system where teachers can release an exam and evaluate the student's results, and students and take an exam.
-                        </p>
-                        <p>
-                           <a class="btn btn-primary btn-large" href="#">Learn more</a>
-                        </p>
+                  <div class="col-md-8 p-3 bg-white border">
+                     <div class="alert alert-dismissable alert-info">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        ×
+                        </button>
+                        <h4>
+                           Welcome!
+                        </h4>
+                        If you are using this service for the first time, please read the descriptions.
                      </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <dl>
+                              <dt>
+                                 Releases An Exam
+                              </dt>
+                              <dd>
+                                 You can create an exam by specifying the time slot and the questions. We support 4 types of questions, including Multiple Choices, True False Questions, Fill in the blank and Short Answer.
+                              </dd>
+                              <dt>
+                                 Check and Grade a Paper
+                              </dt>
+                              <dd>
+                                 The system can automatically grade the Multiple Choices and True False Questions, However you need to grade the others yourself. After grading all submissions, remember to publish the result so students can see it! 
+                              </dd>
+                              <dt>
+                                 View Student's Exam
+                              </dt>
+                              <dd>
+                                 Statistics of an exam is available to you once the exam is published. You can also inspect individual submissions of all students who participated in the exam.qa
+                              </dd>
+                           </dl>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 p-3 bg-white border">
+                     <h3>Tutorial</h3>
+                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/OK_JCtrrv-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                </div>
             </div>
