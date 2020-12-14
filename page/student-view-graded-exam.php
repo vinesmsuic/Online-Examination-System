@@ -2,7 +2,6 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
-      <script src="../js/teacher-view-exam.js"></script>
    </head>
    <body onload="Timeout();">
       <div class="wrapper">
@@ -14,16 +13,13 @@
             <ul class="list-unstyled components">
                <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                    <a href="teacher-dashboard.php">Dashboard</a>
+               <a href="student-dashboard.php">Dashboard</a>
                </li>
                <li>
-                    <a href="teacher-release-exam.php">Releases an Exam</a>
+                    <a href="student-take-exam.php">Take Exam</a>
                </li>
                <li class="active">
-                    <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
-               </li>
-               <li>
-                    <a href="teacher-view-exam.php">View Student's Exam</a>
+                    <a href="student-view-result.php">View Result</a>
                </li>
             </ul>
          </nav>
@@ -50,20 +46,18 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <form action="../functionalphp/teacher-update-grade-to-server.php" method="post" id="update-grade-to-server">
-                        <?php include '../functionalphp/teacher-get-selectedstudent-ans.php';?>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary btn-lg form-control" onclick="updateStudentGradesToServer();">Confirm Marking</button>
-                            <input type="Submit" id="update-submit" hidden />
-                        </div>
-                     </form>
+                  <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                           <?php include '../functionalphp/get-student-graded-result.php';?>  
+                  </div>
+               </div>
+                  </div>
                   </div>
                </div>
             </div>
-
          </div>
       </div>
    </body>
    <?php include '../functionalphp/main-foot.php';?>
-   <?php include '../functionalphp/back-to-top-btn.php';?>
 </html>

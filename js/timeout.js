@@ -5,6 +5,7 @@ function Timeout() {
     Request.onload = function() {
         var respond = Request.responseText;
         if (respond == "not logged.") {
+            alert("Your login period has expired! Please login again!")
             window.location.href = "../login.html";
         }
     }

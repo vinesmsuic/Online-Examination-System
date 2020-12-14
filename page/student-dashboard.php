@@ -2,8 +2,9 @@
 <html>
    <head>
       <?php include '../functionalphp/main-head.php';?>
+      <script src="../js/student-motivation.js"></script>
    </head>
-   <body>
+   <body onload="Timeout(); loadMotivationQuote();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">
@@ -61,12 +62,8 @@
                         </div>
                         <div class="col-md-6 pt-3 bg-white border">
                            <blockquote class="blockquote">
-                              <p class="mb-0">
-                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                              </p>
-                              <footer class="blockquote-footer">
-                                 Someone famous in <cite>Source Title</cite>
-                              </footer>
+                              <p class="mb-0" id="motivation"></p>
+                              <footer class="blockquote-footer" id="motivation-footer"></footer>
                            </blockquote>
                            <div class="row">
                               <div class="col-md-4">

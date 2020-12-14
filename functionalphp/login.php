@@ -19,10 +19,10 @@
             if ($PW == $row['PW']) {
                 $type = $row['userType'];
                 $nick = $row['nickName'];
-                //save data, record cookie for 24hours
-                setcookie("type", $type, time() + 3000, '/');
-                setcookie("userID", $ID, time() + 3000, '/'); //save data, record cookie for 24hours
-                setcookie("nickName", $nick, time() + 3000, '/'); 
+                //save data, record cookie for 6hours
+                setcookie("type", $type, time() + 21600, '/');
+                setcookie("userID", $ID, time() + 21600, '/'); 
+                setcookie("nickName", $nick, time() + 21600, '/'); 
                 //login success - Request.responseText to checklogin.js
                 echo $type;
 

@@ -5,7 +5,7 @@
       <script src="../js/teacher-add-questions.js"></script>
    </head>
 
-   <body onload="btnAddQuestion(); getCourseList();">
+   <body onload="Timeout(); btnAddQuestion(); getCourseList();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

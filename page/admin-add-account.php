@@ -4,20 +4,10 @@
         <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/registration.js"></script>
    </head>
-   <body onload="StudentForm();">
+   <body onload="Timeout(); StudentForm();">
       <div class="wrapper">
          <!-- Sidebar  -->
-         <nav id="sidebar">
-            <div class="sidebar-header">
-               <h3>Online Examination System</h3>
-            </div>
-            <ul class="list-unstyled components">
-               <p>Welcome, Admin!</p>
-               <li class="active">
-                  <a href="../page/admin-system-management.php">System Management</a>
-               </li>
-            </ul>
-         </nav>
+         <?php include "admin-sidebar.php";?>
          <!-- Page Content  -->
          <div id="content">
             <div class="container login-container">

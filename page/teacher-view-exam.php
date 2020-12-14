@@ -4,29 +4,10 @@
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/teacher-view-exam.js"></script>
    </head>
-   <body>
+   <body onload="Timeout();">
       <div class="wrapper">
          <!-- Sidebar  -->
-         <nav id="sidebar">
-            <div class="sidebar-header">
-               <h3>Online Examination System</h3>
-            </div>
-            <ul class="list-unstyled components">
-               <?php include '../functionalphp/get-nickname.php'; ?>
-               <li>
-                  <a href="teacher-dashboard.php">Dashboard</a>
-               </li>
-               <li >
-                  <a href="teacher-release-exam.php">Releases an Exam</a>
-               </li>
-               <li >
-                  <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
-               </li>
-               <li class="active">
-                  <a href="#">View Student's Exam</a>
-               </li>
-            </ul>
-         </nav>
+         <?php include "teacher-sidebar-view.php" ;?>
          <!-- Page Content  -->
          <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,13 +34,15 @@
                   <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <h3>View Graded Exams</h3>
                      <form action="teacher-view-graded-students.php" method="post" id="select-graded-exam">
                            <?php include '../functionalphp/teacher-get-graded-exams.php';?>
                            <input type="hidden" id="targetCourse" name="targetCourse" value="" />
                            <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
                      </form>
-                     
+                     <form action="teacher-view-stats.php" method="post" id="select-stat">
+                           <input type="hidden" id="statCourse" name="statCourse" value="" />
+                           <input type="hidden" id="statCourseNum" name="statCourseNum" value="" />
+                     </form>
                   </div>
                </div>
             </div>

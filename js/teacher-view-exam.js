@@ -36,3 +36,9 @@ function btnViewGradeForStudent(selectedCourse, examNum, studentID){
     document.getElementById("targetstudentID").value = studentID;
     document.getElementById("select-graded-student").submit();
 }
+
+function btnViewStatistics(selectedCourse, examNum){
+    document.getElementById("statCourse").value = selectedCourse;
+    document.getElementById("statCourseNum").value = examNum;
+    document.getElementById("select-stat").submit();
+}

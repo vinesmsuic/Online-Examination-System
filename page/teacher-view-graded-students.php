@@ -4,29 +4,10 @@
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/teacher-view-exam.js"></script>
    </head>
-   <body>
+   <body onload="Timeout();">
       <div class="wrapper">
          <!-- Sidebar  -->
-         <nav id="sidebar">
-            <div class="sidebar-header">
-               <h3>Online Examination System</h3>
-            </div>
-            <ul class="list-unstyled components">
-               <?php include '../functionalphp/get-nickname.php'; ?>
-               <li>
-                    <a href="teacher-dashboard.php">Dashboard</a>
-               </li>
-               <li>
-                    <a href="teacher-release-exam.php">Releases an Exam</a>
-               </li>
-               <li>
-                    <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
-               </li>
-               <li class="active">
-                    <a href="teacher-view-exam.php">View Student's Exam</a>
-               </li>
-            </ul>
-         </nav>
+         <?php include "teacher-sidebar-view.php" ;?>
          <!-- Page Content  -->
          <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,7 +40,6 @@
                            <input type="hidden" id="targetCourseNum" name="targetCourseNum" value="" />
                            <input type="hidden" id="targetstudentID" name="targetstudentID" value="" />
                      </form>
-                     
                   </div>
                </div>
             </div>

@@ -15,7 +15,18 @@
 
     $result1 = $stmt1->get_result();
     
-    print '<h3>Grading: Student '.$studentID.' </h3>';
+    if (isset($_COOKIE["type"])){
+        $sourceType = $_COOKIE["type"];
+    } else {
+        header("Location: ../functionalphp/logout.php");
+        $connect->close();
+        exit();
+    }
+    if ($sourceType == "teacher"){
+        print '<h3>Student ID: '.$studentID.' </h3>';
+    } else {
+        print '<h3>Exam Course: '.$course.' </h3>';
+    }
 
     $totalScore = 0;
     $fullScore = 0;

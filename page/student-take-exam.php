@@ -4,7 +4,7 @@
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/student-choose-exam.js"></script>
    </head>
-   <body>
+   <body onload="Timeout();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

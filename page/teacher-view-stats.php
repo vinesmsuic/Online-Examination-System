@@ -14,16 +14,16 @@
             <ul class="list-unstyled components">
                <?php include '../functionalphp/get-nickname.php'; ?>
                <li>
-                    <a href="teacher-dashboard.php">Dashboard</a>
+                  <a href="teacher-dashboard.php">Dashboard</a>
                </li>
-               <li>
-                    <a href="teacher-release-exam.php">Releases an Exam</a>
+               <li >
+                  <a href="teacher-release-exam.php">Releases an Exam</a>
+               </li>
+               <li >
+                  <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
                </li>
                <li class="active">
-                    <a href="teacher-checkandgrade-exam.php">Check and Grade a Paper</a>
-               </li>
-               <li>
-                    <a href="teacher-view-exam.php">View Student's Exam</a>
+                  <a href="#">View Student's Exam</a>
                </li>
             </ul>
          </nav>
@@ -50,17 +50,17 @@
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
-                     <form action="../functionalphp/teacher-update-grade-to-server.php" method="post" id="update-grade-to-server">
-                        <?php include '../functionalphp/teacher-get-selectedstudent-ans.php';?>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary btn-lg form-control" onclick="updateStudentGradesToServer();">Confirm Marking</button>
-                            <input type="Submit" id="update-submit" hidden />
-                        </div>
-                     </form>
+                  <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <?php include "../functionalphp/teacher-get-statistics.php";?>
                   </div>
                </div>
             </div>
-
+                  </div>
+               </div>
+            </div>
+         
          </div>
       </div>
    </body>

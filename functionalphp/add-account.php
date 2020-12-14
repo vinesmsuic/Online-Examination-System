@@ -24,18 +24,22 @@
         $securityType = intval($_POST['securityType']);
         $securityAnswer = $_POST['securityAnswer'];
 
-
+        
         // File upload path
         // Max: Need to create a new folder for storing images - e.g. ../img/client
-        $targetDir = "../img/client";
-        $fileName = basename($_FILES["avatar"]["name"]);
-        $targetFilePath = $targetDir . $fileName;
+        $temp = explode(".", $_FILES["avatar"]["name"]);
+        $fileName = $ID . '.' . end($temp);
+        $targetFilePath = "../img/client/" . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         if(!empty($_FILES["avatar"]["name"])){
             $statusMsg = '';
 	        // Allow certain file formats
             $allowTypes = array('jpg','png','jpeg');
             if(in_array($fileType, $allowTypes)){
+                //overwrite file if existed
+                if(file_exists($targetFilePath)) {
+                    unlink($targetFilePath);
+                }
                 // Upload file to server
                 if(move_uploaded_file($_FILES["avatar"]["tmp_name"], $targetFilePath)){
                     // Insert image file name into database
@@ -76,12 +80,28 @@
                     $statusMsg = "Sorry, there was an error uploading your file.";
                 }
             }else{
-                $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.';
+                $accFrom = $_POST['source'];
+
+                //Alert User that the file is unaccepted
+               
+                if($accFrom == "admin")
+                {
+                    $alert_message = "Sorry, only JPG, JPEG & PNG files are allowed to upload. Please modify the account again.";
+                    $link = "../page/admin-system-management.php";
+                }
+                else
+                {
+                    $alert_message = "Sorry, only JPG, JPEG & PNG files are allowed to upload. Please register again.";
+                    $link = "../page/registration.php";
+                }
+                //Direct to different page according to user account type (Workaround)
+                echo "<script type='text/javascript'>alert('$alert_message'); window.setTimeout(function(){ window.location.href = '$link'; }, 0);</script>";
+                        
             }
         }else{
             $statusMsg = 'Please select a file to upload.';
         }
-        // Display status message
+        // Display status message, this is rarely as mostly the user would encounter no problem or only upload the wrong file type
         
         echo $statusMsg;
 
