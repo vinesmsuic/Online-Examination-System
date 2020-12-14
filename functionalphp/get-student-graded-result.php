@@ -141,8 +141,13 @@
             <h5>Question ".$QID." (".$maxScore." marks)</h5> <div class='form-group'> 
             <label>Question:</label> <div class='container'>".$questionText."</div> 
             </div> <div class='form-group'> 
-            <label>".$tag." Answer:</label> <div class='container'>".$studentAns."</div> </div>
-            <div class='form-group'> 
+            <label>".$tag." Answer:</label> <div class='container'>";
+            if (strlen($studentAns)==0) {
+                print "**NOT ANSWERED**";
+            } else {
+                print $studentAns;
+            }
+            echo "</div> </div><div class='form-group'> 
             <label>Correct Answer:</label> <div class='container'>".$correctAns."</div> </div> 
             <div class='form-group'> <label>Score Given</label> 
             <input type='number' class='form-control col-xs-1 container' placeholder='' id='question".$QID."-marked-score' name='question".$QID."-marked-score' value='".$studentScore."' readonly /> </div> 
@@ -155,8 +160,13 @@
             <h5>Question ".$QID." (".$maxScore." marks)</h5> <div class='form-group'> 
             <label>Question:</label> <div class='container'>".$questionText."</div> 
             </div> <div class='form-group'> 
-            <label>".$tag." Answer:</label> <div class='container'>".$studentAns."</div> </div> 
-            <div class='form-group'> <label>Score Given</label> 
+            <label>".$tag." Answer:</label> <div class='container'>";
+            if (strlen($studentAns)==0) {
+                print "**NOT ANSWERED**";
+            } else {
+                print $studentAns;
+            }
+            echo "</div> </div><div class='form-group'> <label>Score Given</label> 
             <input type='number' class='form-control col-xs-1 container' placeholder='' id='question".$QID."-marked-score' name='question".$QID."-marked-score' value='".$studentScore."' readonly /> </div> 
             </div><br>";
 
