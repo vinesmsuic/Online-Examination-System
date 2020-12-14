@@ -7,13 +7,6 @@ body {
     max-height: 35px;
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
-}
-
 td, th{
     text-align:center;
 }

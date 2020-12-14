@@ -3,7 +3,14 @@
 
 ?>
 <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
-
+<style>
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+</style>
 <script>
 //Back to Top Button using JQuery
 $(document).ready(function(){
