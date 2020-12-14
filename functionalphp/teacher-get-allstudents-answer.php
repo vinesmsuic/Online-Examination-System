@@ -15,7 +15,7 @@
 
     if($result->num_rows == 0)
     {
-        print '<h3>You have finished marking student submitted answers of '.$course.' exam. </h3>';
+        print '<h3>All student submissions in this '.$course.' exam have been graded. </h3>';
         print "<button type='button' class='col-md-12 col-lg-12 form-control btn btn-primary btn-lg'onclick='releaseResultsToStudents(`".$course."`,".$courseExamNum.");'>Click here to release the results</button>";
     }
     else
