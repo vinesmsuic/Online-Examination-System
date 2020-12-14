@@ -3,7 +3,7 @@
    <head>
       <?php include '../functionalphp/main-head.php';?>
    </head>
-   <body onload="Timeout();">
+   <body onload="TimeoutAndRedirect('student');">
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "student-sidebar-view.php";?>

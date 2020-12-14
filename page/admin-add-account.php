@@ -4,7 +4,7 @@
         <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/registration.js"></script>
    </head>
-   <body onload="Timeout(); StudentForm();">
+   <body onload="TimeoutAndRedirect('admin'); StudentForm();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "admin-sidebar.php";?>

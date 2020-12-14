@@ -4,7 +4,7 @@
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/student-motivation.js"></script>
    </head>
-   <body onload="Timeout(); loadMotivationQuote();">
+   <body onload="TimeoutAndRedirect('student'); loadMotivationQuote();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

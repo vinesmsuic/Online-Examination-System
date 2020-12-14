@@ -5,7 +5,7 @@
       <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/admin-modify.js"></script>
    </head>
-   <body onload="Timeout(); InfoSet('<?php echo $_POST['targetID'];?>');">
+   <body onload="TimeoutAndRedirect('admin'); InfoSet('<?php echo $_POST['targetID'];?>');">
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "admin-sidebar.php";?>

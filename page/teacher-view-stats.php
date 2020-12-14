@@ -4,7 +4,7 @@
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/teacher-view-exam.js"></script>
    </head>
-   <body onload="Timeout();">
+   <body onload="TimeoutAndRedirect('teacher');">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

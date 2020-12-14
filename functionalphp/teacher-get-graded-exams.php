@@ -16,7 +16,7 @@
 
         if($result->num_rows == 0)
         {
-            print '<h3>You have no graded exam yet.<h3>';
+            print '<div class="alert alert-warning"><h4>Opps...</h4><strong>Seems that you have not yet published any exam yet.</strong></div>';
         }
         else
         {

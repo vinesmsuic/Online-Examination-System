@@ -16,7 +16,7 @@
 
         if($result->num_rows == 0)
         {
-            print '<h3>You have no created exam yet. Try <a style="color:blue;" href="teacher-release-exam.php">create one?</a> <h3>';
+            print '<div class="alert alert-warning"><h4>Opps...</h4><strong>Seems that you have not arranged any exam yet. Try <a style="color:blue;" href="teacher-release-exam.php">arrange one?</a></strong></div>';
         }
         else
         {

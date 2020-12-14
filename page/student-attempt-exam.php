@@ -4,7 +4,7 @@
        <?php include '../functionalphp/main-head.php';?>
        <script src="../js/student-attempt-exam.js"></script>
     </head>
-    <body class="jumbotron vertical-center" onload="Timeout(); SetTimer();">
+    <body class="jumbotron vertical-center" onload="TimeoutAndRedirect('student'); SetTimer();">
     <div class="container">
         <div class="row">
             <div class="col-md-10 login-form mx-auto">

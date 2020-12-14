@@ -98,7 +98,7 @@
 
         $result = $stmt->get_result();
 
-        print "<h3>Current Exams</h3>";
+        print "<h3>Examination Info</h3>";
         print '<table class="table table-striped table-primary">';
         print '<tr><th>Course Code</th><th>Exam Number</th><th>Exam Date</th><th>Start Time</th><th>Expire Time</th><th>Creator</th><th>Remarks</th><th>Status</th></tr>';
         while ($row = $result->fetch_assoc()) {

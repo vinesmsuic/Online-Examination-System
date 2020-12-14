@@ -15,7 +15,7 @@
 
     if($result->num_rows == 0)
     {
-
+        print '<div class="alert alert-warning"><h4>Opps...</h4><strong>Seems that no student attended this exam.</strong></div>';
     }
     else
     {
