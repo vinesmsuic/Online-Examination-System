@@ -21,6 +21,7 @@ function btnConfirmReleaseExam() {
 	console.log(questionNumbers);
 	document.getElementById("errorMessage1").innerText = "";
 	document.getElementById("errorMessage2").innerText = "";
+	document.getElementById("errorMessage3").innerText = "";
 	document.getElementById("question-number").value = questionNumbers;
 	var valid = true;
 	if (document.getElementById("course-name").value == ",,"){
@@ -32,25 +33,25 @@ function btnConfirmReleaseExam() {
 			var startTime = (document.getElementById("start-time").value).split(":");
 			var endTime = (document.getElementById("end-time").value).split(":");
 			if ((parseInt(startTime[0]) > parseInt(endTime[0])) || ((parseInt(startTime[0]) == parseInt(endTime[0]))&&(parseInt(startTime[1]) >= parseInt(endTime[1])))){
-				document.getElementById("errorMessage3").innerHTML = "Please select a valid time range.";
+				document.getElementById("errorMessage3").innerText = "Please select a valid time range.";
 				valid = false;
 			}
 			var dateValues = (document.getElementById("exam-date").value).split("-");
 			var d = new Date();
-			if (d.getFullYear()-parseInt(dateValues[2])<0){
-				document.getElementById("errorMessage2").innerHTML = "Please select an exam period in the future.";
+			if (d.getFullYear()-parseInt(dateValues[0])>0){
+				document.getElementById("errorMessage2").innerText = "Please select an exam period in the future.";
 				valid = false;
-			} else if ((d.getFullYear()-parseInt(dateValues[2])==0)&&(d.getMonth()-parseInt(dateValues[1])<0)){
-				document.getElementById("errorMessage2").innerHTML = "Please select an exam period in the future.";
+			} else if ((d.getFullYear()-parseInt(dateValues[0])==0)&&(d.getMonth()+1-parseInt(dateValues[1])>0)){
+				document.getElementById("errorMessage2").innerText = "Please select an exam period in the future.";
 				valid = false;
-			} else if ((d.getMonth()-parseInt(dateValues[1])==0)&&(d.getDate()-parseInt(dateValues[0])<0)){
-				document.getElementById("errorMessage2").innerHTML = "Please select an exam period in the future.";
+			} else if ((d.getMonth()+1-parseInt(dateValues[1])==0)&&(d.getDate()-parseInt(dateValues[2])>0)){
+				document.getElementById("errorMessage2").innerText = "Please select an exam period in the future.";
 				valid = false;
-			} else if ((d.getDate()-parseInt(dateValues[0])==0)&&(d.getHours()-parseInt(startTime[0])<0)){
-				document.getElementById("errorMessage2").innerHTML = "Please select an exam period in the future.";
+			} else if ((d.getDate()-parseInt(dateValues[2])==0)&&(d.getHours()-parseInt(startTime[0])>0)){
+				document.getElementById("errorMessage2").innerText = "Please select an exam period in the future.";
 				valid = false;
-			} else if ((d.getHours()-parseInt(startTime[0])==0)&&(d.getMinutes()-parseInt(startTime[1])<0)){
-				document.getElementById("errorMessage2").innerHTML = "Please select an exam period in the future.";
+			} else if ((d.getHours()-parseInt(startTime[0])==0)&&(d.getMinutes()-parseInt(startTime[1])>0)){
+				document.getElementById("errorMessage2").innerText = "Please select an exam period in the future.";
 				valid = false;
 			}
 		}

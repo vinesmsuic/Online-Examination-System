@@ -12,6 +12,7 @@
         }
         $result = $getImage->get_result();
         $row = $result->fetch_assoc();
+        
         $imgPath = '../img/client/'. $row['profileImage'];
 
         echo '<div class="container-fluid p-2 pl-3"><img style="max-height:200px;" src=' . $imgPath . ' alt="" class="img-fluid img-thumbnail mx-auto rounded"></div>';

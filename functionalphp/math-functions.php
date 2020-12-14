@@ -47,4 +47,13 @@
         }
     }
 
+    function sd_square($x, $total) { 
+        return pow($x - $total,2); 
+    }
+
+    function getSD($arr) {
+        return sqrt(array_sum(array_map("sd_square", $arr, array_fill(0,count($arr), (array_sum($arr) / count($arr)) ) ) ) / (count($arr)-1) );
+    }
+
+
 ?>

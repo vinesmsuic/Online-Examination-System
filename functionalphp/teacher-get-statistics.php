@@ -32,27 +32,38 @@
 
     $minTotalScore = min($scoreArray);
 
-    echo "<div class='container-fluid p-3 bg-white border'> 
-            <h5>Overall Performance</h5> <div class='form-group'> 
-            <div class='container'>
-            <div class='row'>
-            <div class='col-sm'>
-                <label>Max Score: ".$maxTotalScore." </label>
-            </div>
-            <div class='col-sm'>
-                <label>Min Score: ".$minTotalScore." </label>
-            </div>
-            <div class='col-sm'>
-                <label>Median Score: ".$medianTotalScore." </label>
-            </div>
-            <div class='col-sm'>
-                <label>Average Score: ".$averageTotalScore." </label>
-            </div>
-            </div>
+    $standardDeviation = getSD($scoreArray);
 
-            </div> 
-            </div> 
-            </div><br>";
+    echo "<div class='container-fluid p-3 bg-white border'>
+                <h5>Overall Performance</h5>
+                <div class='form-group'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-lg'>
+                            <label>Max: ".number_format((float)$maxTotalScore, 2, '.', '')." </label>
+                        </div>
+                        <div class='col-lg'>
+                            <label>Min: ".number_format((float)$minTotalScore, 2, '.', '')." </label>
+                        </div>
+                        <div class='col-lg'>
+                            <label>Median: ".number_format((float)$medianTotalScore, 2, '.', '')." </label>
+                        </div>
+                        <div class='col-lg'>
+                            <label>Average: ".number_format((float)$averageTotalScore, 2, '.', '')." </label>
+                        </div>
+                        <div class='col-lg'>
+                            <label>SD: ".number_format((float)$standardDeviation, 2, '.', '')." </label>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class='container'>
+                    <div class='row col-lg-6 mx-auto'>
+                        <div id='chartContainer' style='max-height: 100%; height: 300px; max-width: 100%;'></div>
+                    </div>
+                </div>
+            </div>
+            <br>";
 
 
     //----------------------------------------
@@ -64,7 +75,7 @@
 	if (!$valid){
 	    die("Could not successfully run query.". $connect->connect_error);
     }
-
+    $fullScore = 0;
     $result1 = $stmt1->get_result();
     
     while ($row = $result1->fetch_assoc()) {
@@ -206,8 +217,84 @@
             </div><br>";
             
         }
+
+        $fullScore += $maxScore;
     }
 
     
     $connect->close();
 ?>    
+
+<script>
+    var data = <?php echo json_encode($scoreArray, JSON_NUMERIC_CHECK); ?>;
+    var fullScore = <?php echo $fullScore; ?>;
+    var courseName = <?php echo json_encode($course); ?>;
+    
+    function getOccurence(arr) {
+        var a = [], b = [], prev;
+        
+        arr.sort();
+        for ( var i = 0; i < arr.length; i++ ) {
+            if ( arr[i] !== prev ) {
+                a.push(arr[i]);
+                b.push(1);
+            } else {
+                b[b.length-1]++;
+            }
+            prev = arr[i];
+        }
+        
+        return [a, b];
+    }
+
+    var result = getOccurence(data);
+
+    var keys = result[0];
+    var freqs = result[1];
+
+    var output = keys.map(function(obj,index){
+    var myobj = {};
+    myobj[freqs[index]] = obj;
+    return {
+            x: myobj[freqs[index]],
+            y: freqs[index]
+        };
+    });
+
+    titleText = "Score Distribution of " + courseName;
+
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {  
+            title: {
+                text: titleText
+            },
+            interactivityEnabled: true,
+            animationEnabled: true,
+            animationDuration: 800,
+            exportFileName: titleText,
+            exportEnabled: true,
+            zoomEnabled:true,
+            zoomType: "xy",
+            theme: "light1",
+            backgroundColor: "white",
+
+            axisY: {
+                minimum: 0,
+                title: "Students"
+                
+            },
+            axisX: {
+                minimum: 0,
+                maximum: fullScore,
+                title: "Score"
+                
+            },
+            data: [{
+                type: "splineArea",
+                dataPoints: output
+            }]
+        });
+        chart.render();
+}
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
