@@ -88,5 +88,43 @@
         print "</table>";
         print "<div class='line'></div>";
 
+        //--------------------------------Get Examination Info
+
+        $stmt = $connect->prepare("SELECT * FROM exams ORDER BY course, examNum");
+        $valid = $stmt->execute();
+	    if (!$valid){
+	    	die("Could not successfully run query.". $connect->connect_error);
+        }
+
+        $result = $stmt->get_result();
+
+        print "<h3>Current Exams</h3>";
+        print '<table class="table table-striped table-primary">';
+        print '<tr><th>Course Code</th><th>Exam Number</th><th>Exam Date</th><th>Start Time</th><th>Expire Time</th><th>Creator</th><th>Remarks</th><th>Status</th></tr>';
+        while ($row = $result->fetch_assoc()) {
+            print "<tr><td>";
+            print $row['course'] . "</td><td>";
+            print $row['examNum'] . "</td><td>";
+            print $row['examDate'] . "</td><td>";
+            print $row['startTime'] ."</td><td>";
+            print $row['expireTime'] . "</td><td>";
+            print $row['creator'] . "</td><td>";
+            if (strlen($row['remarks'])==0) {
+                print " - </td><td>";
+            } else {
+                print $row['remarks'] . "</td><td>";
+            }
+            if ($row['graded']==0) {
+                print "Not Published</td>";
+            } else {
+                print "Published</td>";
+            }
+            print "</tr>";
+        }
+        print '</table>';
+        print "<div class='line'></div>";
+
+
+
         $connect->close();
 ?>

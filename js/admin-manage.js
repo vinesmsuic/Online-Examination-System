@@ -1,13 +1,3 @@
-function showAccounts() {
-    var myRequest = new XMLHttpRequest();
-    myRequest.open("GET", "../functionalphp/admin-select-account.php", true);
-    myRequest.send();
-    myRequest.onload = function() {
-        console.log(this.responseText);
-        document.getElementById("account").innerHTML = this.responseText;
-    }
-}
-
 function btnDelete(selectedID) {
     var myRequest = new XMLHttpRequest();
     var info = "?enterID=" + selectedID;

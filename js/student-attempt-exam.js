@@ -19,7 +19,7 @@ function CountDown(){
     } else {
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000)
+        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
         document.getElementById("DisplayTimeValue").innerText = "Remaining time:" + hours + "h "
         + minutes + "m " + seconds + "s ";
         var percentage =  ((time-remainingTime)/time) * 100;
