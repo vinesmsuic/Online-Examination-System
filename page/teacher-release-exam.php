@@ -52,17 +52,17 @@
                      </h3>
                      <div class="container-fluid p-3">
                            <div class="form-group">
-                              <div class="error-message" id="errorMessage1" style="color:red;"></div>
+                              <div class="error-message" id="errorMessage1"></div>
                               <label for="course-name">Course Code:</label><select type="text" class="form-control" id="course-name" name="course-name" ></select>
                            </div>
-                           <div class="error-message" id="errorMessage2" style="color:red;"></div>
+                           <div class="error-message" id="errorMessage2"></div>
                            <div class="form-group">
                               <label for="exam-date">
                               Exam Date: 
                               </label>
                               <input type="date" id="exam-date" name="exam-date" required />
                            </div>
-                           <div class="error-message" id="errorMessage3" style="color:red;"></div>
+                           <div class="error-message" id="errorMessage3"></div>
                            <div class="form-row form-group">
                               <div class="col">
                                  <label for="start-time">Start Time: </label>

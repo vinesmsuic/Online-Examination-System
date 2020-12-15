@@ -18,3 +18,7 @@ img {
     -o-user-drag: none;
     user-drag: none;
 }
+
+.error-message{
+    color:red;
+}

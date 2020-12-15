@@ -68,7 +68,7 @@
                   </div>
                   <div class="col-md-4 p-3 bg-white border">
                      <h3>Tutorial</h3>
-                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/OK_JCtrrv-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/bfhIVV_Lybc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                </div>
             </div>

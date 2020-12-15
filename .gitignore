@@ -1,1 +1,4 @@
-**/client/
+/img/client/*.png
+/img/client/*.jpg
+/img/client/*.gif
+/img/client/*.jpeg
