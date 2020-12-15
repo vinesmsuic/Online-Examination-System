@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <?php include '../functionalphp/registration-head.php';?>
       <?php include '../functionalphp/main-head.php';?>
-	  <script src="../js/admin-modify.js"></script>
+      <script src="../js/admin-modify.js"></script>
    </head>
    <body onload="TimeoutAndRedirect('admin'); InfoSet('<?php echo $_POST['targetID'];?>');">
       <div class="wrapper">
@@ -20,14 +19,14 @@
                             <input type="hidden" name="usertype" id="usertype" value="" />
                             <input type="hidden" name="originalID" id="originalID" value="" />
                             <input type="hidden" name="imgUpload" id="imgUpload" value="false" />
-                            <div class="error-message" id="errorMessage1"></div>
+                            <div class="error-message" id="errorMessage1" style="color: red"></div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="User ID * " name="userid" id="userID" required />
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Nickname * " name="nickname" id="nickName"required />
                             </div>
-                            <div class="error-message" id="errorMessage2"></div>
+                            <div class="error-message" id="errorMessage2" style="color: red"></div>
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Email * " name="email" id="email" required />
                             </div>
@@ -51,7 +50,7 @@
                             </div>
                             <div id="teacherform" hidden>
                                 <div class="form-group">
-                                    <div class="error-message" id="errorMessage3"></div>
+                                    <div class="error-message" id="errorMessage3" style="color: red"></div>
                                     <label for="">Course code: </label>
                                     <div id="course1space">
                                         <input type="text" class="form-control" placeholder="Course * " name="course1" id="course1" required /></br>
@@ -62,7 +61,7 @@
                                     <input type="button" value="Reset" id="resetcourse" class="btn btn-primary" onclick="ResetCourse();" />
                                 </div>
                             </div>
-                            <div class="error-message" id="errorMessage4"></div>
+                            <div class="error-message" id="errorMessage4" style="color: red"></div>
                             <div class="form-group form-row">
                                 <div class="col">
                                 <label>Select a security question: </label>

@@ -4,7 +4,7 @@
      <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/admin-manage.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('admin'); Timeout();">
+   <body onload="TimeoutAndRedirect('admin');">
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "admin-sidebar.php";?>

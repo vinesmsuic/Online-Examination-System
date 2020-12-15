@@ -9,14 +9,6 @@ function InfoSet(ID) {
         console.log(respond);
         if (respond != "No such account") {
             var accountInfo = JSON.parse(Request.responseText);
-            console.log(accountInfo);
-            console.log(accountInfo.userType);
-            console.log(accountInfo.PW);
-            console.log(accountInfo.email);
-            console.log(accountInfo.sQType);
-            console.log(accountInfo.sQAnswer);
-            console.log(accountInfo.profileImage);
-            console.log(accountInfo.nickName);
             upload = false;
             document.getElementById("originalID").value = ID;
             document.getElementById("userID").value = ID;
@@ -83,42 +75,40 @@ function Modify() {
     document.getElementById("errorMessage3").innerText = "";
     document.getElementById("errorMessage4").innerText = "";
     if ((userID != "") && (password != "") && (email != "")) {
-        if (userID != document.getElementById("originalID").value) {
-            var Request = new XMLHttpRequest();
-            var info = "?enterID=" + userID;
-            Request.open("GET", "../functionalphp/find-account.php" + info, false);
-            Request.send();
-            Request.onload = function() {
-                var respond = Request.responseText;
-                if (respond != "No such account") {
-                    document.getElementById("errorMessage1").innerText = "An account with the entered login ID has already been created. Please change your login ID.";
-                    valid = false;
+        var Request = new XMLHttpRequest();
+        var info = "?enterID=" + userID;
+        Request.open("GET", "../functionalphp/find-account.php" + info, true);
+        Request.send();
+        Request.onload = function() {
+            var respond = Request.responseText;
+            if ((respond != "No such account")&&(userID != document.getElementById("originalID").value)) {
+                document.getElementById("errorMessage1").innerText = "An account with the entered login ID has already been created. Please change your login ID.";
+                valid = false;
+            }
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!regex.test(email)) {
+                document.getElementById("errorMessage2").innerText = "Please input a valid email address.";
+                valid = false;
+            }
+            if (document.getElementById("usertype") == "teacher") {
+                courseNum = parseInt(document.getElementById("coursenum").value);
+                for (i = 1; i <= courseNum; i++) {
+                    courseName = document.getElementById("course" + i).value;
+                    console.log(courseName.includes(","));
+                    if (courseName.includes(",")) {
+                        valid = false;
+                        document.getElementById("errorMessage3").innerText = "Course code cannot include character ','.";
+                    }
                 }
             }
-        }
-        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!regex.test(email)) {
-            document.getElementById("errorMessage2").innerText = "Please input a valid email address.";
-            valid = false;
-        }
-        if (document.getElementById("usertype") == "teacher") {
-            courseNum = parseInt(document.getElementById("coursenum").value);
-            for (i = 1; i <= courseNum; i++) {
-                courseName = document.getElementById("course" + i).value;
-                console.log(courseName.includes(","));
-                if (courseName.includes(",")) {
-                    valid = false;
-                    document.getElementById("errorMessage3").innerText = "Course code cannot include character ','.";
-                }
+            if (document.getElementById("security").value == "-1") {
+                document.getElementById("errorMessage4").innerText = "Please select a question as your security question.";
+                valid = false;
             }
-        }
-        if (document.getElementById("security").value == "-1") {
-            document.getElementById("errorMessage4").innerText = "Please select a question as your security question.";
-            valid = false;
-        }
-        if (valid) {
-            document.getElementById("submit").click();
-        }
+            if (valid) {
+                document.getElementById("submit").click();
+            }
+        }  
     } else {
         document.getElementById("submit").click();
     }
