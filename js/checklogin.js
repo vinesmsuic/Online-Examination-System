@@ -15,7 +15,7 @@ function login() {
             } else if (respond == "teacher"){
                 window.location.href = "page/teacher-dashboard.php";
             } else{
-                document.getElementById("errorMessage").innerText = "Failed to find an account with the input ID.";
+                document.getElementById("errorMessage").innerText = respond;
             }
         }
     } else {
