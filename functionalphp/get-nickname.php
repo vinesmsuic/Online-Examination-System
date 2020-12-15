@@ -15,7 +15,7 @@
         
         $imgPath = '../img/client/'. $row['profileImage'];
 
-        echo '<div class="container-fluid p-2 pl-3"><img style="max-height:200px;" src=' . $imgPath . ' alt="" class="img-fluid img-thumbnail mx-auto rounded"></div>';
+        echo '<div class="container-fluid p-2 pl-3"><img style="max-height:200px;" src=' . $imgPath . ' alt="" onError="imgError(this);" class="img-fluid img-thumbnail mx-auto rounded"></div>';
 
         $connect->close();
     }
