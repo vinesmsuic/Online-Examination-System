@@ -52,7 +52,14 @@
     }
 
     function getSD($arr) {
-        return sqrt(array_sum(array_map("sd_square", $arr, array_fill(0,count($arr), (array_sum($arr) / count($arr)) ) ) ) / (count($arr)-1) );
+        if((count($arr)-1) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return sqrt(array_sum(array_map("sd_square", $arr, array_fill(0,count($arr), (array_sum($arr) / count($arr)) ) ) ) / (count($arr)-1) );
+        }
     }
 
 

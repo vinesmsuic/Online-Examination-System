@@ -102,7 +102,15 @@
         $maxScore = $inside_row['score'];
         $questionText = $inside_row['question'];
 
-        $correctRate = number_format((float)$avgStudentScore/$maxScore * 100, 2, '.', '');
+        if($maxScore != 0)
+        {
+            $correctRate = number_format((float)$avgStudentScore/$maxScore * 100, 2, '.', '');
+        }
+        else
+        {
+            $correctRate = number_format((float)100, 2, '.', '');
+        }
+        
     
         if($questionType == 1 || $questionType == 2)
         {
