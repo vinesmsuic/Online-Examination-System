@@ -82,7 +82,7 @@ $createTable4 = "CREATE TABLE exam_answers
 examNum INT NOT NULL, 
 studentID varchar(64) NOT NULL,
 QID INT NOT NULL, 
-answer varchar(64), 
+answer varchar(512), 
 score DOUBLE(10,2),
 submitTime varchar(64),
 PRIMARY KEY (course, examNum, studentID, QID))";
