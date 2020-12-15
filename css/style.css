@@ -7,7 +7,7 @@ body {
     max-height: 35px;
 }
 
-td, th{
+td, th {
     text-align:center;
 }
 
@@ -19,6 +19,6 @@ img {
     user-drag: none;
 }
 
-.error-message{
+.error-message {
     color:red;
 }
