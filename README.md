@@ -6,4 +6,4 @@ EIE4432 Project Milestone
 
 Demo video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bfhIVV_Lybc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/bfhIVV_Lybc/maxresdefault.jpg)](https://youtu.be/bfhIVV_Lybc)
