@@ -1,13 +1,17 @@
 function login() {
     var enterID = document.getElementById("enterID").value;
     var password = document.getElementById("password").value;
-    if ((password != "") && (enterID != "")) {
-        var Request = new XMLHttpRequest();
-        var info = "?enterID=" + enterID + "&password=" + password;
-        Request.open("GET", "functionalphp/login.php" + info, true);
-        Request.send();
-        Request.onload = function() {
-            var respond = Request.responseText;
+   if ((password != "") && (enterID != "")) {
+
+ var info = "?enterID=" + enterID + "&password=" + password;
+ 
+ $.ajax
+({
+  type: "GET",
+  url: "functionalphp/login.php"+info,
+  success: function(respond)
+  {
+  
             if (respond == "admin") {
                 window.location.href = "page/admin-system-management.php";
             } else if (respond == "student"){
@@ -16,20 +20,28 @@ function login() {
                 window.location.href = "page/teacher-dashboard.php";
             } else{
                 document.getElementById("errorMessage").innerText = respond;
-            }
-        }
-    } else {
+            }  
+  
+ 
+  }
+});
+}
+ 
+    else {
         document.getElementById("errorMessage").innerText = "Please fill in all the fields.";
     }
 }
 
 function redirect() {
-    var Request = new XMLHttpRequest();
-    Request.open("GET", "functionalphp/redirect.php", true);
-    Request.send();
-    Request.onload = function() {
-        var respond = Request.responseText;
-        if (respond != "not logged.") {
+
+ $.ajax
+({
+  type: "GET",
+  url: "functionalphp/redirect.php",
+  success: function(respond)
+  {
+  
+                 if (respond != "not logged.") {
             if (respond == "admin") {
                 window.location.href = "page/admin-system-management.php";
             } else if (respond == "student"){
@@ -38,5 +50,8 @@ function redirect() {
                 window.location.href = "page/teacher-dashboard.php";
             }
         }
-    }
+  
+ 
+  }
+});
 }
