@@ -1,8 +1,8 @@
 <?php
     include "mysql-connect.php";
 
-    if (isset($_COOKIE["userID"])){
-        $userID = $_COOKIE["userID"];
+    if (isset($_SESSION["userID"])){
+        $userID = $_SESSION["userID"];
         $notGraded = intval(0);
 
         $stmt = $connect->prepare("SELECT course, examNum, examDate, startTime, expireTime, remarks FROM exams WHERE creator = ? AND graded = ?");

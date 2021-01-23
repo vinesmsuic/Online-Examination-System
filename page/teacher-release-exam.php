@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-teacher.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/teacher-add-questions.js"></script>
    </head>
 
-   <body onload="TimeoutAndRedirect('teacher'); btnAddQuestion(); getCourseList();">
+   <body onload="btnAddQuestion(); getCourseList();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">
@@ -43,7 +44,7 @@
                            <!--Generate Questions Here When User click "Add Questions"-->
                         </div>
                         <input type="hidden" name="question-number" id="question-number" value="0" />
-                        <input type="hidden" name="creator" id="creator" value="<?php if (ISSET($_COOKIE['userID'])) { echo $_COOKIE['userID'];}?>" />
+                        <input type="hidden" name="creator" id="creator" value="<?php if (ISSET($_SESSION['userID'])) { echo $_SESSION['userID'];}?>" />
                         <input type="Submit" id="submit" hidden />
                   </div>
                   <div class="col-md-5">

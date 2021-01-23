@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-student.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/student-choose-exam.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('student');">
+   <body>
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "student-sidebar-view.php";?>
@@ -18,7 +19,7 @@
                         <?php include "../functionalphp/student-get-graded-exams.php";?>
                         <input type="hidden" id="course" name="targetCourse" value="" />
                         <input type="hidden" id="examNum" name="targetCourseNum" value="" />
-                        <input type="hidden" id="targetstudentID" name="targetstudentID" value="<?php if (ISSET($_COOKIE['userID'])) { echo $_COOKIE['userID'];}?>" />
+                        <input type="hidden" id="targetstudentID" name="targetstudentID" value="<?php if (ISSET($_SESSION['userID'])) { echo $_SESSION['userID'];}?>" />
                      </form>
                   </div>
                </div>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-teacher.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/teacher-view-exam.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('teacher');">
+   <body>
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "teacher-sidebar-grade.php"; ?>

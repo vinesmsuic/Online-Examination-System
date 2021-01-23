@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-student.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/student-motivation.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('student'); loadMotivationQuote();">
+   <body onload="loadMotivationQuote();">
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

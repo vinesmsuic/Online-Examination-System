@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-student.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/student-choose-exam.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('student');">
+   <body>
       <div class="wrapper">
          <!-- Sidebar  -->
          <nav id="sidebar">

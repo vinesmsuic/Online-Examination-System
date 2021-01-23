@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-student.php';?>
       <?php include '../functionalphp/main-head.php';?>
    </head>
-   <body onload="TimeoutAndRedirect('student');">
+   <body>
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "student-sidebar-view.php";?>

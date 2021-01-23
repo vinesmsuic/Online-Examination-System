@@ -1,9 +1,9 @@
 <?php
-    if (isset($_COOKIE["nickName"])){
-        echo '<p>Welcome! '. $_COOKIE["nickName"]. '</p>';
-
-        include "mysql-connect.php";
-        $ID = $_COOKIE["userID"];
+    include "mysql-connect.php";
+    if (isset($_SESSION["nickName"])){
+        echo '<p>Welcome! '. $_SESSION["nickName"]. '</p>';
+        
+        $ID = $_SESSION["userID"];
         $getImage = $connect->prepare("SELECT profileImage FROM users WHERE ID = ?");
         $getImage->bind_param("s",$ID);
         $valid = $getImage->execute();

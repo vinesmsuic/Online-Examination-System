@@ -1,8 +1,10 @@
 <?php
 		include "mysql-connect.php";
-        
-        if (isset($_COOKIE["userID"])){
-            $ID = $_COOKIE["userID"];
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION["userID"])){
+            $ID = $_SESSION["userID"];
             $stmt = $connect->prepare("SELECT course FROM users WHERE ID = ?");
             $stmt->bind_param("s",$ID);
             $valid = $stmt->execute();

@@ -4,8 +4,8 @@
         date_default_timezone_set("Asia/Hong_Kong");
         $stmt = $connect->prepare("SELECT DISTINCT exams.course as 'course', exams.examNum as 'examNum', examDate, remarks, submitTime, SUM(exam_answers.score) as 'hisScore' FROM exams, exam_answers 
         WHERE graded = 1 and (exams.course = exam_answers.course and exams.examNum = exam_answers.examNum) and studentID = ? ORDER BY examDate DESC, submitTime");
-        if (isset($_COOKIE["userID"])){
-            $stmt->bind_param("s",$_COOKIE['userID']);
+        if (isset($_SESSION["userID"])){
+            $stmt->bind_param("s",$_SESSION['userID']);
         } else {
             header("Location: ../functionalphp/logout.php");
             $connect->close();

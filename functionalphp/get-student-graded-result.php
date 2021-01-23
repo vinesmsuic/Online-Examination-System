@@ -15,8 +15,8 @@
 
     $result1 = $stmt1->get_result();
     
-    if (isset($_COOKIE["type"])){
-        $sourceType = $_COOKIE["type"];
+    if (isset($_SESSION["type"])){
+        $sourceType = $_SESSION["type"];
     } else {
         header("Location: ../functionalphp/logout.php");
         $connect->close();

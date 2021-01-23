@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-admin.php';?>
       <?php include '../functionalphp/main-head.php';?>
       <script src="../js/admin-modify.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('admin'); InfoSet('<?php echo $_POST['targetID'];?>');">
+   <body onload="InfoSet('<?php echo $_POST['targetID'];?>');">
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "admin-sidebar.php";?>

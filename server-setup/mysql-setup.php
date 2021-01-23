@@ -27,7 +27,7 @@ $dropTable1 = "DROP TABLE IF EXISTS users";
 $createTable1 = "CREATE TABLE users (
   ID varchar(64) NOT NULL,
   userType varchar(64) NOT NULL,
-  PW varchar(64),
+  PW varchar(255),
   nickName varchar(64),
   email varchar(64),
   profileImage varchar(255),
@@ -39,9 +39,9 @@ $createTable1 = "CREATE TABLE users (
   PRIMARY KEY (ID),
   UNIQUE KEY ID (ID)
  )";
-
+$adminpassword = password_hash('admin4432', PASSWORD_DEFAULT);
 $addRecords1 ="REPLACE INTO users (ID, userType, PW, nickName, email, profileImage, course, gender, birthday, sQType, sQAnswer) VALUES
-('admin', 'admin', 'admin4432', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL);";
+('admin', 'admin', '$adminpassword', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL);";
 
 $dropTable2 = "DROP TABLE IF EXISTS exams";
 

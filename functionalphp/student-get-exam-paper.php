@@ -3,13 +3,13 @@
     
     $course = $_POST['course'];
     $examNum = intval($_POST['examNum']);
-    if (ISSET($_COOKIE['userID'])) { 
-        print '<input type="hidden" name="submitter" id="submitter" value="'.$_COOKIE['userID'].'" />';
+    if (ISSET($_SESSION['userID'])) { 
+        print '<input type="hidden" name="submitter" id="submitter" value="'.$_SESSION['userID'].'" />';
     } else {
         header("Location: ../functionalphp/logout.php");
     }
     $stmt = $connect->prepare("SELECT studentID FROM exam_answers WHERE course = ? AND examNum = ? AND studentID = ?");
-    $stmt->bind_param("sis",$course,$examNum, $_COOKIE['userID']);
+    $stmt->bind_param("sis",$course,$examNum, $_SESSION['userID']);
     $valid = $stmt->execute();
     if (!$valid){
     	die("Could not successfully run query.". $connect->connect_error);

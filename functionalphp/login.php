@@ -16,13 +16,16 @@
 	    	echo "Failed to find an account with the input ID.";
 	    } else {
             $row = $result->fetch_assoc();
-            if ($PW == $row['PW']) {
+            if (password_verify($PW, $row['PW'])) {
                 $type = $row['userType'];
                 $nick = $row['nickName'];
-                //save data, record cookie for 6hours
-                setcookie("type", $type, time() + 21600, '/');
-                setcookie("userID", $ID, time() + 21600, '/'); 
-                setcookie("nickName", $nick, time() + 21600, '/'); 
+                //save data
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION["type"]=$type;
+		        $_SESSION["userID"]=$ID;
+		        $_SESSION["nickName"]=$nick;
                 //login success - Request.responseText to checklogin.js
                 echo $type;
 

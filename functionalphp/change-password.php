@@ -1,6 +1,6 @@
 <?php
     include "mysql-connect.php";
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $ID = $_POST['userid'];
     $stmt = $connect->prepare("UPDATE users SET PW = ? WHERE ID = ?");
     $stmt->bind_param("ss",$password,$ID);

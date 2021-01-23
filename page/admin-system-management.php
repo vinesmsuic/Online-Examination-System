@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php include '../functionalphp/page-type-admin.php';?>
      <?php include '../functionalphp/main-head.php';?>
 	  <script src="../js/admin-manage.js"></script>
    </head>
-   <body onload="TimeoutAndRedirect('admin');">
+   <body>
       <div class="wrapper">
          <!-- Sidebar  -->
          <?php include "admin-sidebar.php";?>

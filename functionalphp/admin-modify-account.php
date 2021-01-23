@@ -6,7 +6,7 @@
         $ID = $_POST['userid'];
         $nickName = $_POST['nickname'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $userType = $_POST['usertype'];
         if ($userType=="student"){
             $course = NULL;
